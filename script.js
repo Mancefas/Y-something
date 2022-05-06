@@ -1,23 +1,24 @@
-const y901 = document.querySelector("#y901");
-const y901Text = "neprivaloma regl.nr.0428/2009";
+const generalText = "NEPRIVALOMA REGL.NR.";
+const y901Text = "0428/2009";
+const y904Text = "xxxx";
+const y906Text = "xxxxxx";
 
-y901.addEventListener("click", () => {
-  navigator.clipboard.writeText(y901Text);
-  console.log(y901Text);
-});
+const btns = document.querySelectorAll("button");
 
-const y904 = document.querySelector("#y904");
-const y904Text = "neprivaloma regl.nr.xxxx";
+btns.forEach((e) =>
+  e.addEventListener("click", () => {
+    const pressedBtnId = e.id;
+    switch (pressedBtnId) {
+      case "y901":
+        navigator.clipboard.writeText(`${generalText}${y901Text}`);
+        break;
+      case "y904":
+        navigator.clipboard.writeText(`${generalText}${y904Text}`);
 
-y904.addEventListener("click", () => {
-  navigator.clipboard.writeText(y904Text.toUpperCase());
-  console.log(y904Text);
-});
-
-const y906 = document.querySelector("#y906");
-const y906Text = "neprivaloma regl.nr.xxxxxx";
-
-y906.addEventListener("click", () => {
-  navigator.clipboard.writeText(y906Text.toUpperCase());
-  console.log(y906Text);
-});
+        break;
+      case "y906":
+        navigator.clipboard.writeText(`${generalText}${y906Text}`);
+        break;
+    }
+  })
+);
