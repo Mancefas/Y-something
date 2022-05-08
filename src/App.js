@@ -17,7 +17,11 @@ function App() {
     const clickedId = e.target.id;
     const clickedItem = data.filter((item) => item.name === `${clickedId}`);
     const textFromClickedId = clickedItem[0].text;
-    navigator.clipboard.writeText(`${sameText}${textFromClickedId}`);
+    if (textFromClickedId.length <= 9) {
+      navigator.clipboard.writeText(`${sameText}${textFromClickedId}`);
+    } else {
+      navigator.clipboard.writeText(`${textFromClickedId}`);
+    }
     setShowClipboard(true);
   };
 
