@@ -1,13 +1,8 @@
 import "./App.css";
+import data from "./store/data";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <title>Y-something</title>
-      </header>
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
