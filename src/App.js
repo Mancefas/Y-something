@@ -6,6 +6,7 @@ import { data, sameText } from "./store/data";
 function App() {
   const [showClipboard, setShowClipboard] = useState(false);
   const [initData, setInitData] = useState(data);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => setShowClipboard(false), 1500);
@@ -33,7 +34,17 @@ function App() {
 
   const wholeData = () => {
     setInitData(data);
+    setSearchInput("");
   };
+
+  const searchedData = () => {
+    const findDataWithInput = data.filter((item) =>
+      item.name.includes(searchInput.toUpperCase())
+    );
+    setInitData(findDataWithInput);
+  };
+
+  useEffect(() => searchedData(), [searchInput]);
 
   return (
     <div className="App">
@@ -44,6 +55,13 @@ function App() {
         <button onClick={wholeData} className="filterBtn">
           Visi
         </button>
+        <input
+          className="seachInput"
+          placeholder="Ieškoti"
+          type="text"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        ></input>
       </div>
       {showClipboard && <CheckMark />}
       <div className="btnsDiv">
