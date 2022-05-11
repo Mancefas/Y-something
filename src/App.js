@@ -5,6 +5,7 @@ import { data, sameText } from "./store/data";
 
 function App() {
   const [showClipboard, setShowClipboard] = useState(false);
+  const [initData, setInitData] = useState(data);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowClipboard(false), 1500);
@@ -25,11 +26,28 @@ function App() {
     setShowClipboard(true);
   };
 
+  const filterMostUsed = () => {
+    const newFilteredData = initData.filter((e) => e.mostUsed === true);
+    setInitData(newFilteredData);
+  };
+
+  const wholeData = () => {
+    setInitData(data);
+  };
+
   return (
     <div className="App">
+      <div>
+        <button onClick={filterMostUsed} className="filterBtn">
+          Populiariausi
+        </button>
+        <button onClick={wholeData} className="filterBtn">
+          Visi
+        </button>
+      </div>
       {showClipboard && <CheckMark />}
       <div className="btnsDiv">
-        {data.map((e, i) => (
+        {initData.map((e, i) => (
           <button key={i} className="btn" id={e.name} onClick={clicked}>
             {e.name}
           </button>
