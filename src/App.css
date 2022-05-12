@@ -69,17 +69,17 @@
   background: var(--main-color);
   font-family: inherit;
   padding: 0.3em 0.3em;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 18px;
   /* border: 3px solid black; */
   border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
+  box-shadow: 0.01em 0.01em;
   margin: 0.5rem;
 }
 
 .filterBtn:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+  box-shadow: 0.05em 0.05em;
 }
 
 .filterBtn:active {
@@ -93,19 +93,18 @@
   font-family: inherit;
   width: 7rem;
   padding: 0.3em 0.3em;
-  font-weight: 500;
   font-size: 18px;
   border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
+  box-shadow: 0.01em 0.01em;
   margin: 0.5rem;
 }
 
 .seachInput:focus {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+  box-shadow: 0.05em 0.05em;
 }
 
 .seachInput::placeholder {
   color: black;
-  font-weight: 500;
+  font-weight: 400;
 }

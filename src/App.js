@@ -55,7 +55,7 @@ function App() {
         </button>
         <input
           className="seachInput"
-          placeholder="Ieškoti"
+          placeholder="🔍Ieškoti"
           type="text"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
