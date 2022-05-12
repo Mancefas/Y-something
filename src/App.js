@@ -28,8 +28,9 @@ function App() {
   };
 
   const filterMostUsed = () => {
-    const newFilteredData = initData.filter((e) => e.mostUsed === true);
+    const newFilteredData = data.filter((e) => e.mostUsed === true);
     setInitData(newFilteredData);
+    setSearchInput("");
   };
 
   const wholeData = () => {
@@ -38,10 +39,12 @@ function App() {
   };
 
   useEffect(() => {
-    const findDataWithInput = data.filter((item) =>
-      item.name.includes(searchInput.toUpperCase())
-    );
-    setInitData(findDataWithInput);
+    if (searchInput !== "") {
+      const findDataWithInput = data.filter((item) =>
+        item.name.includes(searchInput.toUpperCase())
+      );
+      setInitData(findDataWithInput);
+    }
   }, [searchInput]);
 
   return (
