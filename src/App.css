@@ -1,3 +1,12 @@
+:root {
+  --main-color: #ffe54c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   min-height: 85vh;
   height: fit-content;
@@ -35,7 +44,7 @@
 
 .btn:after {
   content: "";
-  background-color: #ffe54c;
+  background-color: var(--main-color);
   width: 100%;
   z-index: -1;
   position: absolute;
@@ -57,7 +66,7 @@
 }
 
 .filterBtn {
-  background: #ffe54c;
+  background: var(--main-color);
   font-family: inherit;
   padding: 0.3em 0.3em;
   font-weight: 500;
@@ -79,7 +88,7 @@
 }
 
 .seachInput {
-  background: #ffe54c;
+  background: var(--main-color);
   color: black;
   font-family: inherit;
   width: 7rem;

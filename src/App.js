@@ -37,14 +37,12 @@ function App() {
     setSearchInput("");
   };
 
-  const searchedData = () => {
+  useEffect(() => {
     const findDataWithInput = data.filter((item) =>
       item.name.includes(searchInput.toUpperCase())
     );
     setInitData(findDataWithInput);
-  };
-
-  useEffect(() => searchedData(), [searchInput]);
+  }, [searchInput]);
 
   return (
     <div className="App">
