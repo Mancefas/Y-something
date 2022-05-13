@@ -1,4 +1,6 @@
 const data = [
+    { name: "PAL", text: "DALIS PALETĖS", mostUsed: true  },
+    { name: "PAK", text: "DALIS PAKUOTĖS", mostUsed: true  },
     { name: "Y021", text: "PRAŠYMAS SUTEIKTI LENGV EEA PREF", mostUsed: true  },
     { name: "Y032", text: "338/97/7" },
     { name: "Y068", text: "PREKĖS NE IŠ Š.KORĖJOS", mostUsed: true },
