@@ -18,7 +18,7 @@ const data = [
     { name: "Y917", text: "PREKĖMS NETAIKOMA R649/2012 V PRD" },
     { name: "Y918", text: "PREKĖMS NETAIKOMA R649/2012 IIIPRD" },
     { name: "Y921", text: "PREKĖS, KURIOMS NETAIKOMAS DRAUDIM", mostUsed: true },
-    { name: "Y922", text: "1523/2007" },
+    { name: "Y922", text: "1523/2007", mostUsed: true   },
     { name: "Y923", text: "1013/2006", mostUsed: true },
     { name: "Y924", text: "SU R852/2017 NESUSIJUSIOS PREKĖS" },
     { name: "Y925", text: "EK PRODUKTAI PAGAL R852/17 3str 3d" },
