@@ -1,5 +1,5 @@
 :root {
-  --main-color: #ffe54c;
+  --main-color: #cfe1b9;
 }
 
 * {
@@ -28,8 +28,9 @@
 }
 
 .btn {
+  color: #495057;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 700;
   letter-spacing: 1px;
   padding: 13px 20px 13px;
   outline: 0;
