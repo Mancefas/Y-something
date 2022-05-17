@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import CheckMark from "./components/CheckMark";
+import Header from "./components/Header";
 import { data, sameText } from "./store/data";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <div>
         <button onClick={filterMostUsed} className="filterBtn">
           Populiariausi
