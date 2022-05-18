@@ -31,7 +31,7 @@ const HowToUseIt = (props) => {
           minHeight: "60vh",
           width: "45vw",
           height: "fit-content",
-          paddingBottom: "1rem",
+          paddingBottom: "2rem",
           paddingTop: "1rem",
           borderRadius: "7px",
           backgroundColor: "#fff",
@@ -59,8 +59,8 @@ const HowToUseIt = (props) => {
         <h3 style={{ margin: "1rem" }}>⬇️</h3>
         <h3 style={{ width: "75%", textAlign: "center" }}>
           Tada pasirenkam kur reikia pateikti tekstą ir ten paspaudus antrą
-          pelės mygtuką reikia pasirenkti "paste"/"įklijuoti" arba spaudžiam
-          "CTRL" + "V"
+          pelės mygtuką ir paspaudžiam "paste"/"įklijuoti" arba spaudžiam "CTRL"
+          + "V"
         </h3>
         <h3 style={{ margin: "1rem" }}>⬇️</h3>
         <input
