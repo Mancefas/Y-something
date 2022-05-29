@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import CheckMark from "./components/CheckMark";
 import Header from "./components/Header";
+import SearchY from "./components/SearchY";
 import { data, sameText } from "./store/data";
 
 function App() {
@@ -39,15 +40,6 @@ function App() {
     setSearchInput("");
   };
 
-  useEffect(() => {
-    if (searchInput !== "") {
-      const findDataWithInput = data.filter((item) =>
-        item.name.includes(searchInput.toUpperCase())
-      );
-      setInitData(findDataWithInput);
-    }
-  }, [searchInput]);
-
   return (
     <div className="App">
       <Header />
@@ -58,13 +50,12 @@ function App() {
         <button onClick={wholeData} className="filterBtn">
           Visi
         </button>
-        <input
-          className="seachInput"
-          placeholder="🔍Ieškoti"
-          type="text"
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-        ></input>
+        <SearchY
+          initData={initData}
+          setInitData={setInitData}
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+        />
       </div>
       {showClipboard && <CheckMark />}
       <div className="btnsDiv">
