@@ -6,10 +6,9 @@ import SearchY from "./components/SearchY";
 import { data, sameText } from "./store/data";
 
 function App() {
-  const [showClipboard, setShowClipboard] = useState(false);
   const [initData, setInitData] = useState(data);
   const [searchInput, setSearchInput] = useState("");
-  const [inputError, setInputError] = useState(false);
+  const [showClipboard, setShowClipboard] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowClipboard(false), 1500);
@@ -34,13 +33,11 @@ function App() {
     const newFilteredData = data.filter((e) => e.mostUsed === true);
     setInitData(newFilteredData);
     setSearchInput("");
-    setInputError(false);
   };
 
   const wholeData = () => {
     setInitData(data);
     setSearchInput("");
-    setInputError(false);
   };
 
   return (
@@ -58,8 +55,6 @@ function App() {
           setInitData={setInitData}
           searchInput={searchInput}
           setSearchInput={setSearchInput}
-          inputError={inputError}
-          setInputError={setInputError}
         />
       </div>
       {showClipboard && <CheckMark />}
