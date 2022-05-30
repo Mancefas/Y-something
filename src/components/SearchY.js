@@ -3,12 +3,16 @@ import { data } from "../store/data";
 
 const SearchY = ({ setInitData, searchInput, setSearchInput }) => {
   useEffect(() => {
-    if (searchInput !== "" || searchInput[0] === "Y") {
+    if (
+      searchInput !== "" &&
+      searchInput[0] === "Y" &&
+      searchInput[0] !== undefined
+    ) {
       const findDataWithInput = data.filter((item) =>
         item.name.includes(searchInput.toUpperCase())
       );
       setInitData(findDataWithInput);
-    } else if (searchInput === "") {
+    } else {
       setInitData(data);
     }
     // eslint-disable-next-line
