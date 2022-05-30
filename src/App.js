@@ -7,7 +7,6 @@ import { data, sameText } from "./store/data";
 
 function App() {
   const [initData, setInitData] = useState(data);
-  const [searchInput, setSearchInput] = useState("");
   const [showClipboard, setShowClipboard] = useState(false);
 
   useEffect(() => {
@@ -32,12 +31,10 @@ function App() {
   const filterMostUsed = () => {
     const newFilteredData = data.filter((e) => e.mostUsed === true);
     setInitData(newFilteredData);
-    setSearchInput("");
   };
 
   const wholeData = () => {
     setInitData(data);
-    setSearchInput("");
   };
 
   return (
@@ -50,12 +47,7 @@ function App() {
         <button onClick={wholeData} className="filterBtn">
           Visi
         </button>
-        <SearchY
-          initData={initData}
-          setInitData={setInitData}
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
-        />
+        <SearchY initData={initData} setInitData={setInitData} />
       </div>
       {showClipboard && <CheckMark />}
       <div className="btnsDiv">

@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { data } from "../store/data";
 
-const SearchY = ({ setInitData, searchInput, setSearchInput }) => {
+const SearchY = ({ setInitData }) => {
+  const [searchInput, setSearchInput] = useState("");
+
   useEffect(() => {
     if (
       searchInput !== "" &&
