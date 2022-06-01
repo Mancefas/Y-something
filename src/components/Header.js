@@ -1,10 +1,6 @@
-import React, { useState } from "react";
 import HowToUseIt from "./HowToUseIt";
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(false);
-  const showModalHandler = () => setShowModal(true);
-  const hideModalHandler = () => setShowModal(false);
   return (
     <>
       <div
@@ -18,11 +14,8 @@ const Header = () => {
           justifyContent: "end",
         }}
       >
-        <h3 onClick={showModalHandler} style={{ cursor: "pointer" }}>
-          Kaip naudotis?
-        </h3>
+        <HowToUseIt />
       </div>
-      {showModal && <HowToUseIt onClose={hideModalHandler} />}
     </>
   );
 };
