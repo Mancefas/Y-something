@@ -1,15 +1,6 @@
 import React from "react";
 
-const SortBtns = ({ data, setInitData }) => {
-  const filterMostUsed = () => {
-    const newFilteredData = data.filter((e) => e.mostUsed === true);
-    setInitData(newFilteredData);
-  };
-
-  const wholeData = () => {
-    setInitData(data);
-  };
-
+const SortBtns = ({ wholeData, filterMostUsed }) => {
   return (
     <div style={{ display: "flex" }}>
       <button onClick={filterMostUsed} className="filterBtn">
