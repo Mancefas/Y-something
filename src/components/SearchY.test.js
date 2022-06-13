@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import SearchY from "./SearchY";
+import App from "../App";
 
 const mockFn = jest.fn();
 
@@ -42,4 +43,15 @@ it("should change value in input when you type", () => {
   fireEvent.change(inputField, { target: { value: "y90" } });
 
   expect(inputField.value).toBe("y90".toUpperCase());
+});
+
+it("should not show a different button than what was searched for", () => {
+  render(<App />);
+
+  const inputField = screen.getByPlaceholderText(/🔍Ieškoti/i);
+  const differentBtnThenSearchImput = screen.queryByText(/Y902/i);
+
+  fireEvent.change(inputField, { target: { value: "y901" } });
+
+  expect(differentBtnThenSearchImput).not.toBeVisible();
 });
