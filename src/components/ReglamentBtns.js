@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import CheckMark from "./CheckMark";
 
-const ReglamentBtns = ({ data, sameText, initData }) => {
+import { sameText } from "../store/data";
+
+const ReglamentBtns = ({ data, initData }) => {
   const [showClipboard, setShowClipboard] = useState(false);
 
-  const clicked = (e) => {
+  const clickedHandler = (e) => {
     const clickedId = e.target.id;
     const clickedItem = data.filter((item) => item.name === `${clickedId}`);
     const textFromClickedId = clickedItem[0].text;
@@ -28,7 +30,7 @@ const ReglamentBtns = ({ data, sameText, initData }) => {
       {showClipboard && <CheckMark />}
       <div className="btnsDiv">
         {initData.map((e, i) => (
-          <button key={i} className="btn" id={e.name} onClick={clicked}>
+          <button key={i} className="btn" id={e.name} onClick={clickedHandler}>
             {e.name}
           </button>
         ))}

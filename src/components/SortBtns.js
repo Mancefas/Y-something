@@ -1,18 +1,18 @@
 const SortBtns = ({ setInitData, data }) => {
-  const filterMostUsed = () => {
+  const filterMostUsedHandler = () => {
     const newFilteredData = data.filter((e) => e.mostUsed === true);
     setInitData(newFilteredData);
   };
-  const wholeData = () => {
+  const getWholeDataHandler = () => {
     setInitData(data);
   };
 
   return (
     <div style={{ display: "flex" }}>
-      <button onClick={filterMostUsed} className="filterBtn">
+      <button onClick={filterMostUsedHandler} className="filterBtn">
         Populiariausi
       </button>
-      <button onClick={wholeData} className="filterBtn">
+      <button onClick={getWholeDataHandler} className="filterBtn">
         Visi
       </button>
     </div>
