@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
+import App from "../App";
 import SortBtns from "./SortBtns";
 
 const data = [
@@ -20,20 +21,40 @@ it("should render btns", () => {
   expect(btnVisi).toBeVisible();
 });
 
-it("should call filterMostUsed() when pressed Populiariausi btn", () => {
-  render(<SortBtns filterMostUsed={mockFn} data={data} />);
+it("should not render unpopular btns after pressing Populiariausi btn", () => {
+  render(<App />);
 
   const btnPopuliariausi = screen.getByText(/Populiariausi/i);
   fireEvent.click(btnPopuliariausi);
 
-  expect(mockFn).toHaveBeenCalledTimes(1);
+  const unpopularBtn = screen.queryByText(/Y912/i);
+  expect(unpopularBtn).toBeNull();
 });
 
-it("should call wholeData() when pressed Visi btn", () => {
-  render(<SortBtns wholeData={mockFn} data={data} />);
+it("should render all btns (even unpopular) after pressing Visi btn", () => {
+  render(<App />);
 
-  const btnVisi = screen.getByText(/Visi/i);
-  fireEvent.click(btnVisi);
+  const btnPopuliariausi = screen.getByText(/Visi/i);
+  fireEvent.click(btnPopuliariausi);
 
-  expect(mockFn).toHaveBeenCalledTimes(1);
+  const unpopularBtn = screen.queryByText(/Y912/i);
+  expect(unpopularBtn).toBeVisible();
 });
+
+// it("should call filterMostUsed() when pressed Populiariausi btn", () => {
+//   render(<SortBtns filterMostUsed={mockFn} data={data} />);
+
+//   const btnPopuliariausi = screen.getByText(/Populiariausi/i);
+//   fireEvent.click(btnPopuliariausi);
+
+//   expect(mockFn).toHaveBeenCalledTimes(1);
+// });
+
+// it("should call wholeData() when pressed Visi btn", () => {
+//   render(<SortBtns wholeData={mockFn} data={data} />);
+
+//   const btnVisi = screen.getByText(/Visi/i);
+//   fireEvent.click(btnVisi);
+
+//   expect(mockFn).toHaveBeenCalledTimes(1);
+// });
