@@ -14,7 +14,7 @@ function App() {
       <Header />
       <div style={{ display: "flex" }}>
         <SortBtns data={data} setInitData={setInitData} />
-        <SearchY initData={initData} setInitData={setInitData} />
+        <SearchY setInitData={setInitData} />
       </div>
       <ReglamentBtns data={data} initData={initData} />
     </div>

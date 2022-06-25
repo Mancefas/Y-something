@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { data } from "../store/data";
 
-const SearchY = ({ setInitData }) => {
+type SearchYProps = {
+  setInitData: (
+    e: { name: string; text: string; mostUsed?: boolean }[]
+  ) => void;
+};
+
+const SearchY = ({ setInitData }: SearchYProps) => {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {

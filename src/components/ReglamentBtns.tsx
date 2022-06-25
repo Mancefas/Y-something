@@ -3,11 +3,18 @@ import CheckMark from "./CheckMark";
 
 import { sameText } from "../store/data";
 
-const ReglamentBtns = ({ data, initData }) => {
+type ReglamentBtnsProps = {
+  data: { name: string; text: string; mostUsed?: boolean }[];
+  initData: { name: string; text: string; mostUsed?: boolean }[];
+};
+
+const ReglamentBtns = ({ data, initData }: ReglamentBtnsProps) => {
   const [showClipboard, setShowClipboard] = useState(false);
 
-  const clickedHandler = (e) => {
-    const clickedId = e.target.id;
+  const clickedHandler = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    const clickedId = (e.target as HTMLElement).id;
     const clickedItem = data.filter((item) => item.name === `${clickedId}`);
     const textFromClickedId = clickedItem[0].text;
     if (textFromClickedId.length <= 9) {

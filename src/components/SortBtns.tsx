@@ -1,4 +1,11 @@
-const SortBtns = ({ setInitData, data }) => {
+type SortBtnsProps = {
+  data: { name: string; text: string; mostUsed?: boolean }[];
+  setInitData: (
+    e: { name: string; text: string; mostUsed?: boolean }[]
+  ) => void;
+};
+
+const SortBtns = ({ setInitData, data }: SortBtnsProps) => {
   const filterMostUsedHandler = () => {
     const newFilteredData = data.filter((e) => e.mostUsed === true);
     setInitData(newFilteredData);
