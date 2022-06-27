@@ -1,17 +1,15 @@
-type SortBtnsProps = {
-  data: { name: string; text: string; mostUsed?: boolean }[];
-  setInitData: (
-    e: { name: string; text: string; mostUsed?: boolean }[]
-  ) => void;
-};
+import { useDataContext } from "../context/DataContext";
 
-const SortBtns = ({ setInitData, data }: SortBtnsProps) => {
+const SortBtns = () => {
+  const { dataToShow, setDataToShow, initialData } = useDataContext();
+
   const filterMostUsedHandler = () => {
-    const newFilteredData = data.filter((e) => e.mostUsed === true);
-    setInitData(newFilteredData);
+    const newFilteredData = dataToShow.filter((e) => e.mostUsed === true);
+    setDataToShow(newFilteredData);
   };
+
   const getWholeDataHandler = () => {
-    setInitData(data);
+    setDataToShow(initialData);
   };
 
   return (

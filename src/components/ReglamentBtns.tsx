@@ -3,19 +3,20 @@ import CheckMark from "./CheckMark";
 
 import { sameText } from "../store/data";
 
-type ReglamentBtnsProps = {
-  data: { name: string; text: string; mostUsed?: boolean }[];
-  initData: { name: string; text: string; mostUsed?: boolean }[];
-};
+import { useDataContext } from "../context/DataContext";
 
-const ReglamentBtns = ({ data, initData }: ReglamentBtnsProps) => {
+const ReglamentBtns = () => {
+  const { dataToShow } = useDataContext();
+
   const [showClipboard, setShowClipboard] = useState(false);
 
   const clickedHandler = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     const clickedId = (e.target as HTMLElement).id;
-    const clickedItem = data.filter((item) => item.name === `${clickedId}`);
+    const clickedItem = dataToShow.filter(
+      (item) => item.name === `${clickedId}`
+    );
     const textFromClickedId = clickedItem[0].text;
     if (textFromClickedId.length <= 9) {
       navigator.clipboard.writeText(`${sameText}${textFromClickedId}`);
@@ -36,7 +37,7 @@ const ReglamentBtns = ({ data, initData }: ReglamentBtnsProps) => {
     <>
       {showClipboard && <CheckMark />}
       <div className="btnsDiv">
-        {initData.map((e, i) => (
+        {dataToShow.map((e, i) => (
           <button key={i} className="btn" id={e.name} onClick={clickedHandler}>
             {e.name}
           </button>

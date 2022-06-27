@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { data } from "../store/data";
+import { useEffect, useState } from "react";
 
-type SearchYProps = {
-  setInitData: (
-    e: { name: string; text: string; mostUsed?: boolean }[]
-  ) => void;
-};
+import { useDataContext } from "../context/DataContext";
 
-const SearchY = ({ setInitData }: SearchYProps) => {
+const SearchY = () => {
+  const { setDataToShow, initialData } = useDataContext();
+
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
@@ -16,12 +13,12 @@ const SearchY = ({ setInitData }: SearchYProps) => {
       searchInput[0] === "Y" &&
       searchInput[0] !== undefined
     ) {
-      const findDataWithInput = data.filter((item) =>
+      const findDataWithInput = initialData.filter((item) =>
         item.name.includes(searchInput.toUpperCase())
       );
-      setInitData(findDataWithInput);
+      setDataToShow(findDataWithInput);
     } else {
-      setInitData(data);
+      setDataToShow(initialData);
     }
     // eslint-disable-next-line
   }, [searchInput]);
