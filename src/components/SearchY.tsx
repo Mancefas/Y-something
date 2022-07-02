@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { useDataContext } from "../context/DataContext";
 
 const SearchY = () => {
-  const { setDataToShow, initialData } = useDataContext();
-
-  const [searchInput, setSearchInput] = useState("");
+  const { setDataToShow, initialData, searchInput, setSearchInput } =
+    useDataContext();
 
   useEffect(() => {
     if (

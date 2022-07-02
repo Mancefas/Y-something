@@ -1,15 +1,18 @@
 import { useDataContext } from "../context/DataContext";
 
 const SortBtns = () => {
-  const { dataToShow, setDataToShow, initialData } = useDataContext();
+  const { dataToShow, setDataToShow, initialData, setSearchInput } =
+    useDataContext();
 
   const filterMostUsedHandler = () => {
     const newFilteredData = dataToShow.filter((e) => e.mostUsed === true);
     setDataToShow(newFilteredData);
+    setSearchInput("");
   };
 
   const getWholeDataHandler = () => {
     setDataToShow(initialData);
+    setSearchInput("");
   };
 
   return (
