@@ -16,8 +16,6 @@ const SearchY = () => {
         item.name.includes(searchInput.toUpperCase())
       );
       setDataToShow(findDataWithInput);
-    } else {
-      setDataToShow(initialData);
     }
     // eslint-disable-next-line
   }, [searchInput]);
