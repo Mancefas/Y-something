@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import CheckMark from "./CheckMark";
 
+import SortBtns from "./SortBtns";
+import SearchY from "./SearchY";
+
 import { sameText } from "../store/data";
 
 import { useDataContext } from "../context/DataContext";
@@ -36,6 +39,10 @@ const ReglamentBtns = () => {
   return (
     <>
       {showClipboard && <CheckMark />}
+      <div style={{ display: "flex" }}>
+        <SortBtns />
+        <SearchY />
+      </div>
       <div className="btnsDiv">
         {dataToShow.map((e, i) => (
           <button key={i} className="btn" id={e.name} onClick={clickedHandler}>
