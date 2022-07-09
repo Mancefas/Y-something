@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 import Header from "./Header";
 
 it("should render link BTN at start", () => {
-  render(<Header />);
+  render(<Header showModal={true} />);
 
   const btnToPress = screen.queryByText(/Kaip naudotis?/i);
 
@@ -11,7 +11,7 @@ it("should render link BTN at start", () => {
 });
 
 it("should not see modal content when the button is not pressed", () => {
-  render(<Header />);
+  render(<Header showModal={true} />);
 
   const modalDiv = screen.queryByTestId("modal");
 

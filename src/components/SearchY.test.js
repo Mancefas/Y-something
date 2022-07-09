@@ -2,11 +2,16 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import SearchY from "./SearchY";
 import App from "../App";
+import { DataContextProvider } from "../context/DataContext";
 
 const mockFn = jest.fn();
 
 it("should not throw an error text on initial load/empty input field", () => {
-  render(<SearchY searchInput={""} setInitData={mockFn} />);
+  render(
+    <DataContextProvider>
+      <SearchY searchInput={""} setInitData={mockFn} />
+    </DataContextProvider>
+  );
   const errorMsgComponent = screen.queryByText(/Turi prasidėti su Y/i);
 
   expect(errorMsgComponent).not.toBeInTheDocument();
@@ -14,7 +19,11 @@ it("should not throw an error text on initial load/empty input field", () => {
 
 it("should throw an error text if the value that is provided is not 'Y'", () => {
   const searchInput = "G";
-  render(<SearchY setInitData={mockFn} />);
+  render(
+    <DataContextProvider>
+      <SearchY searchInput={""} setInitData={mockFn} />
+    </DataContextProvider>
+  );
 
   const inputField = screen.getByPlaceholderText(/🔍Ieškoti/i);
   fireEvent.change(inputField, { target: { value: searchInput } });
@@ -26,7 +35,11 @@ it("should throw an error text if the value that is provided is not 'Y'", () => 
 
 it("should not throw an error text if the value that is provided is 'Y'", () => {
   const searchInput = "Y";
-  render(<SearchY setInitData={mockFn} />);
+  render(
+    <DataContextProvider>
+      <SearchY searchInput={""} setInitData={mockFn} />
+    </DataContextProvider>
+  );
 
   const inputField = screen.getByPlaceholderText(/🔍Ieškoti/i);
   fireEvent.change(inputField, { target: { value: searchInput } });
@@ -37,7 +50,11 @@ it("should not throw an error text if the value that is provided is 'Y'", () => 
 });
 
 it("should change value in input when you type", () => {
-  render(<SearchY setInitData={mockFn} />);
+  render(
+    <DataContextProvider>
+      <SearchY searchInput={""} setInitData={mockFn} />
+    </DataContextProvider>
+  );
 
   const inputField = screen.getByPlaceholderText(/🔍Ieškoti/i);
   fireEvent.change(inputField, { target: { value: "y90" } });
@@ -46,7 +63,11 @@ it("should change value in input when you type", () => {
 });
 
 it("should not show a different button than what was searched for", () => {
-  render(<App />);
+  render(
+    <DataContextProvider>
+      <App />
+    </DataContextProvider>
+  );
 
   const inputField = screen.getByPlaceholderText(/🔍Ieškoti/i);
   const differentBtnThenSearchImput = screen.queryByText(/Y902/i);
