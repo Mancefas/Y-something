@@ -49,6 +49,12 @@ const data = [
   { name: "Y996", text: "NETAIKOMA R833/14 3B 1 DRAUDIMAI" },
 ];
 
+const nrPlates = [
+  { shortNr: "CGN", fullNr: "MAN/CGN022//BG512" },
+  { shortNr: "DZZ", fullNr: "MAN/DZZ097//CK256" },
+  { shortNr: "JFN", fullNr: "MAN/JFN391//HR562" },
+];
+
 const sameText = "PREKĖMS NETAIKOMAS REGL.";
 
-export { data, sameText };
+export { data, sameText, nrPlates };

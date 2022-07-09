@@ -1,18 +1,18 @@
 import "./App.css";
 
 import Header from "./components/Header";
+import NumberPlates from "./components/numberPlates/NumberPlates";
 import ReglamentBtns from "./components/ReglamentBtns";
 
-import { DataContextProvider } from "./context/DataContext";
+import { useDataContext } from "./context/DataContext";
 
 function App() {
+  const { whatBtnsToShow } = useDataContext();
   return (
-    <DataContextProvider>
-      <div className="App">
-        <Header />
-        <ReglamentBtns />
-      </div>
-    </DataContextProvider>
+    <div className="App">
+      <Header />
+      {whatBtnsToShow === "regl" ? <ReglamentBtns /> : <NumberPlates />}
+    </div>
   );
 }
 
