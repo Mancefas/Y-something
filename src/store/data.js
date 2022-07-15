@@ -53,6 +53,15 @@ const nrPlates = [
   { shortNr: "CGN", fullNr: "MAN/CGN022//BG512" },
   { shortNr: "DZZ", fullNr: "MAN/DZZ097//CK256" },
   { shortNr: "JFN", fullNr: "MAN/JFN391//HR562" },
+  { shortNr: "FEL", fullNr: "MAN/FEL821//AR239" },
+  { shortNr: "FZC", fullNr: "SCANIA/FZC300//NA300"},
+  { shortNr: "HOO", fullNr: "DAF/HOO033//GD033"},
+  { shortNr: "FJE", fullNr: "DAF/FJE015//FS730"},
+  { shortNr: "JCR", fullNr: "DAF/JCR012//GP112"},
+  { shortNr: "JJF", fullNr: "DAF/JJF889//HH388"},
+  { shortNr: "JUK", fullNr: "SCANIA/JUK330//HS330"},
+  { shortNr: "RKA", fullNr: "DAF/RKA106//PT106"},
+  
 ];
 
 const sameText = "PREKĖMS NETAIKOMAS REGL.";
