@@ -56,7 +56,7 @@ const nrPlates = [
   { shortNr: "FEL", fullNr: "MAN/FEL821//AR239" },
   { shortNr: "FZC", fullNr: "SCANIA/FZC300//NA300"},
   { shortNr: "HOO", fullNr: "DAF/HOO033//GD033"},
-  { shortNr: "FJE", fullNr: "DAF/FJE015//FS730"},
+  { shortNr: "FJE", fullNr: "DAF/FJE015//RJ770"},
   { shortNr: "JCR", fullNr: "DAF/JCR012//GP112"},
   { shortNr: "JJF", fullNr: "DAF/JJF889//HH388"},
   { shortNr: "JUK", fullNr: "SCANIA/JUK330//HS330"},
