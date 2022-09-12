@@ -1,17 +1,13 @@
-import { useEffect, useState } from "react";
-import CheckMark from "./CheckMark";
-
 import SortBtns from "./SortBtns";
 import SearchY from "./SearchY";
 
 import { sameText } from "../store/data";
 
 import { useDataContext } from "../context/DataContext";
+import ClipboardShowing from "./ClipboardShowing";
 
 const ReglamentBtns = () => {
-  const { dataToShow } = useDataContext();
-
-  const [showClipboard, setShowClipboard] = useState(false);
+  const { dataToShow, setShowClipboard } = useDataContext();
 
   const clickedHandler = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -29,16 +25,9 @@ const ReglamentBtns = () => {
     setShowClipboard(true);
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShowClipboard(false), 1500);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [showClipboard]);
-
   return (
     <>
-      {showClipboard && <CheckMark />}
+      <ClipboardShowing />
       <div style={{ display: "flex" }}>
         <SortBtns />
         <SearchY />

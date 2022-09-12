@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
 import { nrPlates } from "../../store/data";
-import CheckMark from "../CheckMark";
+import ClipboardShowing from "../ClipboardShowing";
+
+import { useDataContext } from "../../context/DataContext";
 
 const NumberPlates = () => {
-  const [showClipboard, setShowClipboard] = useState(false);
+  const { setShowClipboard } = useDataContext();
 
   const clickedHandler = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -17,16 +18,9 @@ const NumberPlates = () => {
     setShowClipboard(true);
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShowClipboard(false), 1000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [showClipboard]);
-
   return (
     <>
-      {showClipboard && <CheckMark />}
+      <ClipboardShowing />
       <div
         className="btnsDiv"
         style={{ margin: "auto", paddingTop: "2rem", paddingBottom: "2rem" }}
