@@ -28,7 +28,7 @@ const data = [
   { name: "Y929", text: "848/2018" },
   { name: "Y930", text: "632/2021" },
   { name: "Y934", text: "258/2012" },
-  { name: "Y935", text: "NETAIKOMA R1332/2013 (OL L 335)" },
+  { name: "Y935", text: "NETAIKOMA R1332/2013 (OL L 335)", mostUsed: true  },
   { name: "Y936", text: "NETAIKOMA R2014/88/ES (OL L 45)" },
   { name: "Y937", text: "1793/2019" },
   { name: "Y938", text: "852/2014" },
@@ -53,6 +53,15 @@ const nrPlates = [
   { shortNr: "CGN", fullNr: "MAN/CGN022//BG512" },
   { shortNr: "DZZ", fullNr: "MAN/DZZ097//CK256" },
   { shortNr: "JFN", fullNr: "MAN/JFN391//HR562" },
+  { shortNr: "FEL", fullNr: "MAN/FEL821//AR239" },
+  { shortNr: "FZC", fullNr: "SCANIA/FZC300//NA300"},
+  { shortNr: "HOO", fullNr: "DAF/HOO033//GD033"},
+  { shortNr: "FJE", fullNr: "DAF/FJE015//RJ770"},
+  { shortNr: "JCR", fullNr: "DAF/JCR012//GP112"},
+  { shortNr: "JJF", fullNr: "DAF/JJF889//HH388"},
+  { shortNr: "JUK", fullNr: "SCANIA/JUK330//HS330"},
+  { shortNr: "RKA", fullNr: "DAF/RKA106//PT106"},
+  
 ];
 
 const sameText = "PREKĖMS NETAIKOMAS REGL.";
