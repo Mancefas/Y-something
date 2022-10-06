@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 
-interface dataProps {
-  company: string;
-  nr: number;
-}
+import ConfirmNewData from "./ConfirmNewData";
+
+import { useDataContext } from "../context/DataContext";
 
 const Contracts = () => {
-  const [lastData, setLastData] = useState<dataProps>();
+  const { lastData, setLastData } = useDataContext();
+
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();
+  const [confirmQuestionShow, setConfirmQuestionShow] =
+    useState<boolean>(false);
+  const [showFirstButton, setShowFirstButton] = useState<boolean>(true);
 
   const fetchDataFromApi = async () => {
     try {
@@ -16,11 +19,11 @@ const Contracts = () => {
       const response = await fetch(`${process.env.REACT_APP_SERVER_URL}`);
       const data = await response.json();
 
-      if (data !== null) {
-        setLastData(data);
+      if (response.ok) {
+        setLastData(data.nr);
         setLoading(false);
-      } else if (data === null) {
-        throw "serverio klaida";
+      } else {
+        throw response.statusText;
       }
     } catch (err) {
       console.error(err);
@@ -32,7 +35,12 @@ const Contracts = () => {
   useEffect(() => {
     fetchDataFromApi();
     // eslint-disable-next-line
-  }, []);
+  }, [lastData]);
+
+  const newContractHandler = () => {
+    setConfirmQuestionShow(true);
+    setShowFirstButton(false);
+  };
 
   return (
     <div
@@ -40,18 +48,38 @@ const Contracts = () => {
         height: "70vh",
         textAlign: "center",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      {loading && <h4>kraunama...</h4>}
-      {error && <h4 style={{ color: "red" }}>{error}</h4>}
+      {loading && <h4>kraunama...⏳</h4>}
+      {error && (
+        <h4 style={{ color: "red" }}>Klaida gaunant duomenis : {error}</h4>
+      )}
 
-      {loading === false && error === undefined && lastData !== null && (
+      {loading === false && error === undefined && lastData !== 0 && (
         <div>
-          <h2>Paskutinė įmonė : {lastData?.company}</h2>
-          <h2>Paskutinė sutartis : NCB-{lastData?.nr}</h2>
+          <h2 style={{ marginBottom: "3rem" }}>
+            Laisva sutartis :{" "}
+            <span style={{ color: "blue" }}>
+              NCB-
+              {lastData}
+            </span>
+          </h2>
         </div>
+      )}
+      {showFirstButton && !error && (
+        <button className="button-contract" onClick={newContractHandler}>
+          SUDARIAU NAUJĄ
+        </button>
+      )}
+
+      {confirmQuestionShow && (
+        <ConfirmNewData
+          setShowFirstButton={setShowFirstButton}
+          setConfirmQuestionShow={setConfirmQuestionShow}
+        />
       )}
     </div>
   );

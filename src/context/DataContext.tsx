@@ -13,6 +13,8 @@ type DataContextTypes = {
   setWhatBtnsToShow: (item: string) => void;
   showClipboard: boolean;
   setShowClipboard: (item: boolean) => void;
+  lastData: number;
+  setLastData: (item: number) => void;
 };
 const DataContext = createContext({} as DataContextTypes);
 
@@ -29,6 +31,7 @@ export function DataContextProvider({ children }: DataContextProviderProps) {
   const [searchInput, setSearchInput] = useState("");
   const [whatBtnsToShow, setWhatBtnsToShow] = useState("regl");
   const [showClipboard, setShowClipboard] = useState(false);
+  const [lastData, setLastData] = useState(0);
 
   const initialData = data;
 
@@ -44,6 +47,8 @@ export function DataContextProvider({ children }: DataContextProviderProps) {
         setWhatBtnsToShow,
         showClipboard,
         setShowClipboard,
+        lastData,
+        setLastData,
       }}
     >
       {children}
