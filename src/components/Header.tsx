@@ -8,9 +8,14 @@ const Header = () => {
   const clickedReglmHandler = (
     e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
   ) => setWhatBtnsToShow("regl");
+
   const clickedNumbHandler = (
     e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
   ) => setWhatBtnsToShow("num");
+
+  const clickedContractsHandler = (
+    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
+  ) => setWhatBtnsToShow("none");
 
   return (
     <>
@@ -22,7 +27,7 @@ const Header = () => {
           width: "90%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
         }}
       >
         <div style={{ display: "flex", gap: "2rem" }}>
@@ -38,6 +43,10 @@ const Header = () => {
         </div>
 
         <HowToUseIt />
+
+        <h3 style={{ cursor: "pointer" }} onClick={clickedContractsHandler}>
+          Sutartys
+        </h3>
       </div>
     </>
   );

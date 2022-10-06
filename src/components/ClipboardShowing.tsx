@@ -10,6 +10,7 @@ const ClipboardShowing = () => {
     return () => {
       clearTimeout(timer);
     };
+    // eslint-disable-next-line
   }, [showClipboard]);
 
   return <>{showClipboard && <CheckMark />}</>;
