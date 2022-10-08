@@ -11,10 +11,9 @@ const ConfirmNewData: React.FC<ChildPropsType> = ({
   setShowFirstButton,
   setConfirmQuestionShow,
 }) => {
-  const { lastData } = useDataContext();
+  const { lastData, setLastData } = useDataContext();
 
   const [error, setEror] = useState<string | undefined>();
-  console.log(error);
 
   const sendNewDataToAPI = async (params: number) => {
     try {
@@ -25,6 +24,7 @@ const ConfirmNewData: React.FC<ChildPropsType> = ({
       if (response.ok) {
         setShowFirstButton(true);
         setConfirmQuestionShow(false);
+        setLastData(params);
       } else {
         throw response.statusText;
       }
