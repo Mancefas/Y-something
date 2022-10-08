@@ -69,7 +69,7 @@ const Contracts = () => {
           </h2>
         </div>
       )}
-      {showFirstButton && !error && (
+      {showFirstButton && !error && !loading && (
         <button className="button-contract" onClick={newContractHandler}>
           SUDARIAU NAUJĄ
         </button>
