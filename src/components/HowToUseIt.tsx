@@ -43,7 +43,8 @@ const HowToUseIt = () => {
               alignItems: "center",
               justifyContent: "center",
               minHeight: "60vh",
-              width: "45vw",
+              minWidth: "45vw",
+              width: "fit-content",
               height: "fit-content",
               paddingBottom: "2rem",
               paddingTop: "1rem",
@@ -53,17 +54,28 @@ const HowToUseIt = () => {
           >
             <div
               style={{
-                width: "95%",
+                minWidth: "95%",
+                width: "fit-content",
                 display: "flex",
                 justifyContent: "flex-end",
+                textAlign: "center",
               }}
             >
               <h2 onClick={hideModalHandler} style={{ cursor: "pointer" }}>
                 ❌
               </h2>
             </div>
-            <h1 style={{ marginBottom: "3rem" }}>Naudojimosi instrukcija</h1>
-            <h3>Randam reikiamą numerį ir paspaudžiam ant jo</h3>
+            <h1
+              style={{
+                marginBottom: "3rem",
+                textAlign: "center",
+              }}
+            >
+              Naudojimosi instrukcija
+            </h1>
+            <h3 style={{ textAlign: "center" }}>
+              Randam reikiamą numerį ir paspaudžiam ant jo
+            </h3>
             <h3 style={{ margin: "1rem" }}>⬇️</h3>
             <div style={{ zIndex: "1" }}>
               <button onClick={handler} style={{}} className="btn">
@@ -81,7 +93,7 @@ const HowToUseIt = () => {
               type="text"
               style={{
                 height: "2rem",
-                width: "21rem",
+                width: "80%",
                 fontWeight: "700",
                 textAlign: "center",
               }}
