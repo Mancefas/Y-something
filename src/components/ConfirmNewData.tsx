@@ -57,6 +57,7 @@ const ConfirmNewData: React.FC<ChildPropsType> = ({
           justifyContent: "space-evenly",
           marginTop: "2rem",
         }}
+        className="buttons--container"
       >
         <button className="button-contract" onClick={yesBtnHandler}>
           TAIP
