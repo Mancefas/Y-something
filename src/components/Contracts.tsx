@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
-import ConfirmNewData from "./ConfirmNewData";
+import ConfirmNewData from "./ConfirmNewContractData";
 
 import { useDataContext } from "../context/DataContext";
 
 const Contracts = () => {
   const { lastData, setLastData } = useDataContext();
 
+  const [lastDateAddedContract, setLastDateAddedContract] =
+    useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();
   const [confirmQuestionShow, setConfirmQuestionShow] =
@@ -21,6 +23,7 @@ const Contracts = () => {
 
       if (response.ok) {
         setLastData(data.nr);
+        setLastDateAddedContract(data.date);
         setLoading(false);
       } else {
         throw response.statusText;
@@ -59,14 +62,15 @@ const Contracts = () => {
       )}
 
       {loading === false && error === undefined && lastData !== 0 && (
-        <div>
-          <h2 style={{ marginBottom: "3rem" }}>
+        <div style={{ marginBottom: "3rem" }}>
+          <h2>
             Laisva sutartis :{" "}
             <span style={{ color: "blue" }}>
               NCB-
               {lastData}
             </span>
           </h2>
+          <h4>Paskutinį kartą atnaujinta - {lastDateAddedContract}</h4>
         </div>
       )}
       {showFirstButton && !error && !loading && (

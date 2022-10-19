@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { useDataContext } from "../context/DataContext";
+import { DateForToday } from "../helpers/Helpers";
 
 interface ChildPropsType {
   setShowFirstButton: React.Dispatch<React.SetStateAction<boolean>>;
@@ -19,7 +20,7 @@ const ConfirmNewData: React.FC<ChildPropsType> = ({
     try {
       const response = await fetch(`${process.env.REACT_APP_SERVER_URL}`, {
         method: "PATCH",
-        body: JSON.stringify({ nr: params }),
+        body: JSON.stringify({ nr: params, date: DateForToday() }),
       });
       if (response.ok) {
         setShowFirstButton(true);
