@@ -1,12 +1,12 @@
-import { nrPlates } from "../../../store/data";
-import ClipboardShowing from "../../UI/CheckMark/ClipboardShowing";
+import Clipboard from "../../UI/ClipBoard/Clipboard";
 
+import { nrPlates } from "../../../store/data";
 import { useDataContext } from "../../../context/DataContext";
 
 const NumberPlates = () => {
   const { setShowClipboard } = useDataContext();
 
-  const clickedHandler = (
+  const handleClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     const clickedId = (e.target as HTMLElement).id;
@@ -20,7 +20,7 @@ const NumberPlates = () => {
 
   return (
     <>
-      <ClipboardShowing />
+      <Clipboard />
       <div
         className="btnsDiv"
         style={{ margin: "auto", paddingTop: "2rem", paddingBottom: "2rem" }}
@@ -30,7 +30,7 @@ const NumberPlates = () => {
             key={e.shortNr}
             className="btn"
             id={e.shortNr}
-            onClick={clickedHandler}
+            onClick={handleClick}
           >
             {e.shortNr}
           </button>

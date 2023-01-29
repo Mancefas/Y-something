@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import App from "../../App/App";
-import ReglamentBtns from "../ReglBtns/ReglamentBtns";
+import Reglaments from "../../Pages/Reglaments/Reglaments";
 import { DataContextProvider } from "../../../context/DataContext";
 
 const data = [
@@ -15,7 +15,7 @@ const mockFn = jest.fn();
 it("should render btns", () => {
   render(
     <DataContextProvider>
-      <ReglamentBtns />
+      <Reglaments />
     </DataContextProvider>
   );
 

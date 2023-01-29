@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-import ReglamentBtns from "./ReglamentBtns";
+import ReglamentBtns from "./Reglaments";
 import { DataContextProvider } from "../context/DataContext";
 
 const initData = [

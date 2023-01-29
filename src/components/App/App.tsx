@@ -2,7 +2,7 @@ import "./App.css";
 
 import Header from "../Header/Header";
 import NumberPlates from "../Pages/NumberPlates/NumberPlates";
-import ReglamentBtns from "../UI/ReglBtns/ReglamentBtns";
+import ReglamentBtns from "../Pages/Reglaments/Reglaments";
 import Contracts from "../Pages/Contracts/Contracts";
 
 import { useDataContext } from "../../context/DataContext";

@@ -5,18 +5,6 @@ import { useDataContext } from "../../context/DataContext";
 const Header = () => {
   const { setWhatBtnsToShow, whatBtnsToShow } = useDataContext();
 
-  const clickedReglmHandler = (
-    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
-  ) => setWhatBtnsToShow("regl");
-
-  const clickedNumbHandler = (
-    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
-  ) => setWhatBtnsToShow("num");
-
-  const clickedContractsHandler = (
-    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
-  ) => setWhatBtnsToShow("none");
-
   return (
     <>
       <div
@@ -32,11 +20,11 @@ const Header = () => {
       >
         <div style={{ display: "flex", gap: "2rem" }}>
           {whatBtnsToShow === "num" ? (
-            <h3 style={{ cursor: "pointer" }} onClick={clickedReglmHandler}>
+            <h3 style={{ cursor: "pointer" }} onClick={() => setWhatBtnsToShow("regl")}>
               Reglamentai
             </h3>
           ) : (
-            <h3 style={{ cursor: "pointer" }} onClick={clickedNumbHandler}>
+            <h3 style={{ cursor: "pointer" }} onClick={() => setWhatBtnsToShow("num")}>
               Numeriai
             </h3>
           )}
@@ -44,7 +32,7 @@ const Header = () => {
 
         <HowToUseIt />
 
-        <h3 style={{ cursor: "pointer" }} onClick={clickedContractsHandler}>
+        <h3 style={{ cursor: "pointer" }} onClick={() => setWhatBtnsToShow("none")}>
           Sutartys
         </h3>
       </div>

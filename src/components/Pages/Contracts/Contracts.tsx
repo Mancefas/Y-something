@@ -1,36 +1,35 @@
 import { useState, useEffect } from "react";
 
 import ConfirmNewData from "../../UI/ConfirmNewContract/ConfirmNewContractData";
-
 import { useDataContext } from "../../../context/DataContext";
 
 const Contracts = () => {
-  const { lastData, setLastData } = useDataContext();
+  const { lastContract, setLastContract } = useDataContext();
 
-  const [lastDateAddedContract, setLastDateAddedContract] =
+  const [lastContractDate, setLastContractDate] =
     useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();
-  const [confirmQuestionShow, setConfirmQuestionShow] =
+  const [isConfirmationShown, setIsConfirmationShown] =
     useState<boolean>(false);
-  const [showFirstButton, setShowFirstButton] = useState<boolean>(true);
+  const [isNewContractBtnShown, setIsNewContractBtnShown] = useState<boolean>(true);
 
   const fetchDataFromApi = async () => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       const response = await fetch(`${process.env.REACT_APP_SERVER_URL}`);
       const data = await response.json();
 
       if (response.ok) {
-        setLastData(data.nr);
-        setLastDateAddedContract(data.date);
-        setLoading(false);
+        setLastContract(data.nr);
+        setLastContractDate(data.date);
+        setIsLoading(false);
       } else {
         throw response.statusText;
       }
     } catch (err) {
       console.error(err);
-      setLoading(false);
+      setIsLoading(false);
       setError(err as string);
     }
   };
@@ -38,11 +37,11 @@ const Contracts = () => {
   useEffect(() => {
     fetchDataFromApi();
     // eslint-disable-next-line
-  }, [lastData]);
+  }, [lastContract]);
 
   const newContractHandler = () => {
-    setConfirmQuestionShow(true);
-    setShowFirstButton(false);
+    setIsConfirmationShown(true);
+    setIsNewContractBtnShown(false);
   };
 
   return (
@@ -56,33 +55,33 @@ const Contracts = () => {
         alignItems: "center",
       }}
     >
-      {loading && <h4>kraunama...⏳</h4>}
+      {isLoading && <h4>kraunama...⏳</h4>}
       {error && (
         <h4 style={{ color: "red" }}>Klaida gaunant duomenis : {error}</h4>
       )}
 
-      {loading === false && error === undefined && lastData !== 0 && (
+      {isLoading === false && error === undefined && lastContract !== 0 && (
         <div style={{ marginBottom: "3rem" }}>
           <h2>
             Laisva sutartis :{" "}
             <span style={{ color: "blue" }}>
               NCB-
-              {lastData}
+              {lastContract}
             </span>
           </h2>
-          <h4>Paskutinį kartą atnaujinta - {lastDateAddedContract}</h4>
+          <h4>Paskutinį kartą atnaujinta - {lastContractDate}</h4>
         </div>
       )}
-      {showFirstButton && !error && !loading && (
+      {isNewContractBtnShown && !error && !isLoading && (
         <button className="button-contract" onClick={newContractHandler}>
           SUDARIAU NAUJĄ
         </button>
       )}
 
-      {confirmQuestionShow && (
+      {isConfirmationShown && (
         <ConfirmNewData
-          setShowFirstButton={setShowFirstButton}
-          setConfirmQuestionShow={setConfirmQuestionShow}
+          setIsNewContractBtnShown={setIsNewContractBtnShown}
+          setIsConfirmationShown={setIsConfirmationShown}
         />
       )}
     </div>

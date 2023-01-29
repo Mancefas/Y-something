@@ -8,12 +8,11 @@ const HowToUseIt = () => {
   };
 
   const [showModal, setShowModal] = useState(false);
-  const showModalHandler = () => setShowModal(true);
-  const hideModalHandler = () => setShowModal(false);
+  const handleHideModal = () => setShowModal(!showModal);
 
   return (
     <>
-      <h3 onClick={showModalHandler} style={{ cursor: "pointer" }}>
+      <h3 onClick={() => setShowModal(!showModal)} style={{ cursor: "pointer" }}>
         Kaip naudotis?
       </h3>
 
@@ -21,7 +20,7 @@ const HowToUseIt = () => {
 
       {showModal && (
         <div
-          onClick={hideModalHandler}
+          onClick={handleHideModal}
           style={{
             display: "flex",
             alignItems: "center",
@@ -61,7 +60,7 @@ const HowToUseIt = () => {
                 textAlign: "center",
               }}
             >
-              <h2 onClick={hideModalHandler} style={{ cursor: "pointer" }}>
+              <h2 onClick={handleHideModal} style={{ cursor: "pointer" }}>
                 ❌
               </h2>
             </div>

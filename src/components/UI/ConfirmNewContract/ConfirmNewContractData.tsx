@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 
-import { useDataContext } from "../../../context/DataContext";
 import { DateForToday } from "../../../helpers/Helpers";
 
+import { useDataContext } from "../../../context/DataContext";
+
 interface ChildPropsType {
-  setShowFirstButton: React.Dispatch<React.SetStateAction<boolean>>;
-  setConfirmQuestionShow: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsNewContractBtnShown: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsConfirmationShown: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ConfirmNewData: React.FC<ChildPropsType> = ({
-  setShowFirstButton,
-  setConfirmQuestionShow,
+  setIsNewContractBtnShown,
+  setIsConfirmationShown,
 }) => {
-  const { lastData, setLastData } = useDataContext();
+  const { lastContract, setLastContract } = useDataContext();
 
   const [error, setEror] = useState<string | undefined>();
 
@@ -23,9 +24,9 @@ const ConfirmNewData: React.FC<ChildPropsType> = ({
         body: JSON.stringify({ nr: params, date: DateForToday() }),
       });
       if (response.ok) {
-        setShowFirstButton(true);
-        setConfirmQuestionShow(false);
-        setLastData(params);
+        setIsNewContractBtnShown(true);
+        setIsConfirmationShown(false);
+        setLastContract(params);
       } else {
         throw response.statusText;
       }
@@ -36,12 +37,12 @@ const ConfirmNewData: React.FC<ChildPropsType> = ({
   };
 
   const yesBtnHandler = () => {
-    sendNewDataToAPI(lastData + 1);
+    sendNewDataToAPI(lastContract + 1);
   };
 
   const noBtnHandler = () => {
-    setShowFirstButton(true);
-    setConfirmQuestionShow(false);
+    setIsNewContractBtnShown(true);
+    setIsConfirmationShown(false);
   };
 
   return (
