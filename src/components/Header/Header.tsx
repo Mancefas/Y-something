@@ -1,6 +1,6 @@
-import HowToUseIt from "./HowToUseIt";
+import HowToUseIt from "../Pages/HowToUseIt/HowToUseIt";
 
-import { useDataContext } from "../context/DataContext";
+import { useDataContext } from "../../context/DataContext";
 
 const Header = () => {
   const { setWhatBtnsToShow, whatBtnsToShow } = useDataContext();

@@ -1,10 +1,10 @@
-import SortBtns from "./SortBtns";
-import SearchY from "./SearchY";
+import SortBtns from "../../UI/SortBtns/SortBtns";
+import SearchY from "../SearchBtns/SearchY";
 
-import { sameText } from "../store/data";
+import { sameText } from "../../../store/data";
 
-import { useDataContext } from "../context/DataContext";
-import ClipboardShowing from "./ClipboardShowing";
+import { useDataContext } from "../../../context/DataContext";
+import ClipboardShowing from "../CheckMark/ClipboardShowing";
 
 const ReglamentBtns = () => {
   const { dataToShow, setShowClipboard } = useDataContext();

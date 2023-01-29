@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { useDataContext } from "../context/DataContext";
-import { DateForToday } from "../helpers/Helpers";
+import { useDataContext } from "../../../context/DataContext";
+import { DateForToday } from "../../../helpers/Helpers";
 
 interface ChildPropsType {
   setShowFirstButton: React.Dispatch<React.SetStateAction<boolean>>;

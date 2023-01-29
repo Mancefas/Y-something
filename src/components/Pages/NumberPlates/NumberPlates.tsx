@@ -1,7 +1,7 @@
-import { nrPlates } from "../../store/data";
-import ClipboardShowing from "../ClipboardShowing";
+import { nrPlates } from "../../../store/data";
+import ClipboardShowing from "../../UI/CheckMark/ClipboardShowing";
 
-import { useDataContext } from "../../context/DataContext";
+import { useDataContext } from "../../../context/DataContext";
 
 const NumberPlates = () => {
   const { setShowClipboard } = useDataContext();

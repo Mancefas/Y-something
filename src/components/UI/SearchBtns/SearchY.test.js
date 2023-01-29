@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import SearchY from "./SearchY";
-import App from "../App";
-import { DataContextProvider } from "../context/DataContext";
+import App from "../../App/App";
+import { DataContextProvider } from "../../../context/DataContext";
 
 const mockFn = jest.fn();
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import CheckMark from "./CheckMark";
-import { useDataContext } from "../context/DataContext";
+import { useDataContext } from "../../../context/DataContext";
 
 const ClipboardShowing = () => {
   const { showClipboard, setShowClipboard } = useDataContext();

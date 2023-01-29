@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useDataContext } from "../context/DataContext";
+import { useDataContext } from "../../../context/DataContext";
 
 const SearchY = () => {
   const { setDataToShow, initialData, searchInput, setSearchInput } =
