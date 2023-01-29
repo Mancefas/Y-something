@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import ConfirmNewData from "./ConfirmNewContractData";
+import ConfirmNewData from "../../UI/ConfirmNewContract/ConfirmNewContractData";
 
-import { useDataContext } from "../context/DataContext";
+import { useDataContext } from "../../../context/DataContext";
 
 const Contracts = () => {
   const { lastData, setLastData } = useDataContext();

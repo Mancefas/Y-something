@@ -1,11 +1,11 @@
 import "./App.css";
 
-import Header from "./components/Header";
-import NumberPlates from "./components/numberPlates/NumberPlates";
-import ReglamentBtns from "./components/ReglamentBtns";
-import Contracts from "./components/Contracts";
+import Header from "../Header/Header";
+import NumberPlates from "../Pages/NumberPlates/NumberPlates";
+import ReglamentBtns from "../UI/ReglBtns/ReglamentBtns";
+import Contracts from "../Pages/Contracts/Contracts";
 
-import { useDataContext } from "./context/DataContext";
+import { useDataContext } from "../../context/DataContext";
 
 function App() {
   const { whatBtnsToShow } = useDataContext();

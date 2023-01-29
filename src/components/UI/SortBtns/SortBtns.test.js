@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-import App from "../App";
-import ReglamentBtns from "./ReglamentBtns";
-import { DataContextProvider } from "../context/DataContext";
+import App from "../../App/App";
+import ReglamentBtns from "../ReglBtns/ReglamentBtns";
+import { DataContextProvider } from "../../../context/DataContext";
 
 const data = [
   { name: "T1", text: "Test" },

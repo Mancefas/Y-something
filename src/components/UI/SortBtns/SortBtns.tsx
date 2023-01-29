@@ -1,4 +1,4 @@
-import { useDataContext } from "../context/DataContext";
+import { useDataContext } from "../../../context/DataContext";
 
 const SortBtns = () => {
   const { setDataToShow, initialData, setSearchInput } = useDataContext();

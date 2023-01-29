@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Header from "./Header";
+import Header from "./Header/Header";
 
 it("should render link BTN at start", () => {
   render(<Header showModal={true} />);
