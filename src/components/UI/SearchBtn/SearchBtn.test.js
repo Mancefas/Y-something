@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import SearchY from "./SearchY";
+import { SearchBtn } from "./SearchBtn";
 import App from "../../App/App";
 import { DataContextProvider } from "../../../context/DataContext";
 
@@ -9,7 +9,7 @@ const mockFn = jest.fn();
 it("should not throw an error text on initial load/empty input field", () => {
   render(
     <DataContextProvider>
-      <SearchY searchInput={""} setInitData={mockFn} />
+      <SearchBtn searchInput={""} setInitData={mockFn} />
     </DataContextProvider>
   );
   const errorMsgComponent = screen.queryByText(/Turi prasidėti su Y/i);
@@ -21,7 +21,7 @@ it("should throw an error text if the value that is provided is not 'Y'", () => 
   const searchInput = "G";
   render(
     <DataContextProvider>
-      <SearchY searchInput={""} setInitData={mockFn} />
+      <SearchBtn searchInput={""} setInitData={mockFn} />
     </DataContextProvider>
   );
 
@@ -37,7 +37,7 @@ it("should not throw an error text if the value that is provided is 'Y'", () => 
   const searchInput = "Y";
   render(
     <DataContextProvider>
-      <SearchY searchInput={""} setInitData={mockFn} />
+      <SearchBtn searchInput={""} setInitData={mockFn} />
     </DataContextProvider>
   );
 
@@ -52,7 +52,7 @@ it("should not throw an error text if the value that is provided is 'Y'", () => 
 it("should change value in input when you type", () => {
   render(
     <DataContextProvider>
-      <SearchY searchInput={""} setInitData={mockFn} />
+      <SearchBtn searchInput={""} setInitData={mockFn} />
     </DataContextProvider>
   );
 

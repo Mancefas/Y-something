@@ -1,9 +1,9 @@
-import Clipboard from "../../UI/ClipBoard/Clipboard";
+import Clipboard from "../../UI/ClipBoard";
 
 import { nrPlates } from "../../../store/data";
 import { useDataContext } from "../../../context/DataContext";
 
-const NumberPlates = () => {
+export const NumberPlates = () => {
   const { setShowClipboard } = useDataContext();
 
   const handleClick = (
@@ -39,5 +39,3 @@ const NumberPlates = () => {
     </>
   );
 };
-
-export default NumberPlates;

@@ -9,7 +9,7 @@ interface ChildPropsType {
   setIsConfirmationShown: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ConfirmNewData: React.FC<ChildPropsType> = ({
+export const ConfirmNewContractData: React.FC<ChildPropsType> = ({
   setIsNewContractBtnShown,
   setIsConfirmationShown,
 }) => {
@@ -72,4 +72,3 @@ const ConfirmNewData: React.FC<ChildPropsType> = ({
   );
 };
 
-export default ConfirmNewData;

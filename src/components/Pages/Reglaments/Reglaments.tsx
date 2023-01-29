@@ -1,19 +1,19 @@
-import SortBtns from "../../UI/SortBtn/SortBtn";
-import SearchY from "../../UI/SearchBtn/SearchY";
-import Clipboard from "../../UI/ClipBoard/Clipboard";
-import { ReglamentBtn } from "../../UI/ReglamentBtn/ReglamentBtn";
+import SortBtn from "../../UI/SortBtn";
+import SearchBtn from "../../UI/SearchBtn";
+import Clipboard from "../../UI/ClipBoard";
+import ReglamentBtn from "../../UI/ReglamentBtn";
 
 import { useDataContext } from "../../../context/DataContext";
 
-const Reglaments = () => {
+export const Reglaments = () => {
   const { dataToShow } = useDataContext();
 
   return (
     <>
       <Clipboard />
       <div style={{ display: "flex" }}>
-        <SortBtns />
-        <SearchY />
+        <SortBtn />
+        <SearchBtn />
       </div>
       <div className="btnsDiv">
         {dataToShow.map((e, i) => (
@@ -23,5 +23,3 @@ const Reglaments = () => {
     </>
   );
 };
-
-export default Reglaments;

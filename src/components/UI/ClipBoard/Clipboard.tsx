@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import CheckMark from "./CheckMark";
 import { useDataContext } from "../../../context/DataContext";
 
-const Clipboard = () => {
+export const Clipboard = () => {
   const { showClipboard, setShowClipboard } = useDataContext();
 
   useEffect(() => {
@@ -16,5 +16,3 @@ const Clipboard = () => {
 
   return <>{showClipboard && <CheckMark />}</>;
 };
-
-export default Clipboard;

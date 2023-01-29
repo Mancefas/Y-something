@@ -1,8 +1,8 @@
-import HowToUseIt from "../Pages/HowToUseIt/HowToUseIt";
+import HowToUseIt from "../Pages/HowToUseIt";
 
 import { useDataContext } from "../../context/DataContext";
 
-const Header = () => {
+export const Header = () => {
   const { setWhatBtnsToShow, whatBtnsToShow } = useDataContext();
 
   return (
@@ -39,5 +39,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;

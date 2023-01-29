@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { useDataContext } from "../../../context/DataContext";
 
-const SearchY = () => {
+export const SearchBtn = () => {
   const { setDataToShow, initialData, searchInput, setSearchInput } =
     useDataContext();
 
@@ -40,5 +40,3 @@ const SearchY = () => {
     </div>
   );
 };
-
-export default SearchY;

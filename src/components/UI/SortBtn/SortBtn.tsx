@@ -1,6 +1,6 @@
 import { useDataContext } from "../../../context/DataContext";
 
-const SortBtns = () => {
+export const SortBtn = () => {
   const { setDataToShow, initialData, setSearchInput } = useDataContext();
 
   const filterMostUsedHandler = () => {
@@ -25,5 +25,3 @@ const SortBtns = () => {
     </div>
   );
 };
-
-export default SortBtns;

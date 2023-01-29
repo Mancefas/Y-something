@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
-import ConfirmNewData from "../../UI/ConfirmNewContract/ConfirmNewContractData";
+import ConfirmNewContractData from "../../UI/ConfirmNewContract";
+
 import { useDataContext } from "../../../context/DataContext";
 
-const Contracts = () => {
+export const Contracts = () => {
   const { lastContract, setLastContract } = useDataContext();
 
   const [lastContractDate, setLastContractDate] =
@@ -79,7 +80,7 @@ const Contracts = () => {
       )}
 
       {isConfirmationShown && (
-        <ConfirmNewData
+        <ConfirmNewContractData
           setIsNewContractBtnShown={setIsNewContractBtnShown}
           setIsConfirmationShown={setIsConfirmationShown}
         />
@@ -87,5 +88,3 @@ const Contracts = () => {
     </div>
   );
 };
-
-export default Contracts;

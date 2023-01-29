@@ -31,4 +31,4 @@ export const ReglamentBtn = ({ id }: PropTypes) => {
       {id}
     </button>
   )
-}
+};

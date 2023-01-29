@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const HowToUseIt = () => {
+export const HowToUseIt = () => {
   const handler = () => {
     navigator.clipboard.writeText(
       "Pateikiamas teksas su regl.nr. ar kitu reikalavimu"
@@ -103,5 +103,3 @@ const HowToUseIt = () => {
     </>
   );
 };
-
-export default HowToUseIt;
