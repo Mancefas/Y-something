@@ -1,92 +1,93 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import ConfirmNewData from "../../UI/ConfirmNewContract/ConfirmNewContractData";
+import ConfirmNewContractData from '../../UI/ConfirmNewContract';
 
-import { useDataContext } from "../../../context/DataContext";
+import { useDataContext } from '../../../context/DataContext';
 
-const Contracts = () => {
-  const { lastData, setLastData } = useDataContext();
+export const Contracts: React.FC = (): JSX.Element => {
+  const { lastContract, setLastContract } = useDataContext();
 
-  const [lastDateAddedContract, setLastDateAddedContract] =
-    useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>();
-  const [confirmQuestionShow, setConfirmQuestionShow] =
+  const [lastContractDate, setLastContractDate] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
+  const [isConfirmationShown, setIsConfirmationShown] =
     useState<boolean>(false);
-  const [showFirstButton, setShowFirstButton] = useState<boolean>(true);
+  const [isNewContractBtnShown, setIsNewContractBtnShown] =
+    useState<boolean>(true);
 
-  const fetchDataFromApi = async () => {
+  const fetchDataFromApi = async (): Promise<void> => {
     try {
-      setLoading(true);
+      setIsLoading(true);
+      if (process.env.REACT_APP_SERVER_URL === undefined) {
+        throw new Error('REACT_APP_SERVER_URL is not defined');
+      }
       const response = await fetch(`${process.env.REACT_APP_SERVER_URL}`);
       const data = await response.json();
 
       if (response.ok) {
-        setLastData(data.nr);
-        setLastDateAddedContract(data.date);
-        setLoading(false);
+        setLastContract(data.nr);
+        setLastContractDate(data.date);
+        setIsLoading(false);
       } else {
-        throw response.statusText;
+        throw new Error(response.statusText);
       }
     } catch (err) {
       console.error(err);
-      setLoading(false);
+      setIsLoading(false);
       setError(err as string);
     }
   };
 
   useEffect(() => {
-    fetchDataFromApi();
+    void fetchDataFromApi();
     // eslint-disable-next-line
-  }, [lastData]);
+  }, [lastContract]);
 
-  const newContractHandler = () => {
-    setConfirmQuestionShow(true);
-    setShowFirstButton(false);
+  const newContractHandler = (): void => {
+    setIsConfirmationShown(true);
+    setIsNewContractBtnShown(false);
   };
 
   return (
     <div
       style={{
-        height: "70vh",
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
+        height: '70vh',
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
-      {loading && <h4>kraunama...⏳</h4>}
-      {error && (
-        <h4 style={{ color: "red" }}>Klaida gaunant duomenis : {error}</h4>
+      {isLoading && <h4>kraunama...⏳</h4>}
+      {error !== '' && (
+        <h4 style={{ color: 'red' }}>Klaida gaunant duomenis : {error}</h4>
       )}
 
-      {loading === false && error === undefined && lastData !== 0 && (
-        <div style={{ marginBottom: "3rem" }}>
+      {!isLoading && error === '' && lastContract !== 0 && (
+        <div style={{ marginBottom: '3rem' }}>
           <h2>
-            Laisva sutartis :{" "}
-            <span style={{ color: "blue" }}>
+            Laisva sutartis :{' '}
+            <span style={{ color: 'blue' }}>
               NCB-
-              {lastData}
+              {lastContract}
             </span>
           </h2>
-          <h4>Paskutinį kartą atnaujinta - {lastDateAddedContract}</h4>
+          <h4>Paskutinį kartą atnaujinta - {lastContractDate}</h4>
         </div>
       )}
-      {showFirstButton && !error && !loading && (
+      {isNewContractBtnShown && error === '' && !isLoading && (
         <button className="button-contract" onClick={newContractHandler}>
           SUDARIAU NAUJĄ
         </button>
       )}
 
-      {confirmQuestionShow && (
-        <ConfirmNewData
-          setShowFirstButton={setShowFirstButton}
-          setConfirmQuestionShow={setConfirmQuestionShow}
+      {isConfirmationShown && (
+        <ConfirmNewContractData
+          setIsNewContractBtnShown={setIsNewContractBtnShown}
+          setIsConfirmationShown={setIsConfirmationShown}
         />
       )}
     </div>
   );
 };
-
-export default Contracts;

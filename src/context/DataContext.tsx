@@ -1,37 +1,52 @@
-import { useState, createContext, useContext, ReactNode } from "react";
-import { data } from "../store/data";
+import { useState, createContext, useContext, type ReactNode } from 'react';
+import { data } from '../store/data';
 
-type DataContextTypes = {
-  dataToShow: { name: string; text: string; mostUsed?: boolean }[];
+interface DataContextTypes {
+  dataToShow: Array<{ name: string; text: string; mostUsed?: boolean }>;
   setDataToShow: (
-    item: { name: string; text: string; mostUsed?: boolean }[]
+    item: Array<{ name: string; text: string; mostUsed?: boolean }>
   ) => void;
-  initialData: { name: string; text: string; mostUsed?: boolean }[];
+  initialData: Array<{ name: string; text: string; mostUsed?: boolean }>;
   searchInput: string;
   setSearchInput: (item: string) => void;
   whatBtnsToShow: string;
   setWhatBtnsToShow: (item: string) => void;
   showClipboard: boolean;
   setShowClipboard: (item: boolean) => void;
-  lastData: number;
-  setLastData: (item: number) => void;
-};
-const DataContext = createContext({} as DataContextTypes);
-
-export function useDataContext() {
-  return useContext(DataContext);
+  lastContract: number;
+  setLastContract: (item: number) => void;
 }
 
-type DataContextProviderProps = {
-  children: ReactNode;
+const DataContext = createContext<DataContextTypes>({
+  dataToShow: [],
+  setDataToShow: () => {},
+  initialData: [],
+  searchInput: '',
+  setSearchInput: () => {},
+  whatBtnsToShow: '',
+  setWhatBtnsToShow: () => {},
+  showClipboard: false,
+  setShowClipboard: () => {},
+  lastContract: 0,
+  setLastContract: () => {},
+});
+
+export const useDataContext = (): DataContextTypes => {
+  return useContext(DataContext);
 };
 
-export function DataContextProvider({ children }: DataContextProviderProps) {
+interface DataContextProviderProps {
+  children: ReactNode;
+}
+
+export function DataContextProvider({
+  children,
+}: DataContextProviderProps): React.ReactElement {
   const [dataToShow, setDataToShow] = useState(data);
-  const [searchInput, setSearchInput] = useState("");
-  const [whatBtnsToShow, setWhatBtnsToShow] = useState("regl");
+  const [searchInput, setSearchInput] = useState('');
+  const [whatBtnsToShow, setWhatBtnsToShow] = useState('regl');
   const [showClipboard, setShowClipboard] = useState(false);
-  const [lastData, setLastData] = useState(0);
+  const [lastContract, setLastContract] = useState(0);
 
   const initialData = data;
 
@@ -47,8 +62,8 @@ export function DataContextProvider({ children }: DataContextProviderProps) {
         setWhatBtnsToShow,
         showClipboard,
         setShowClipboard,
-        lastData,
-        setLastData,
+        lastContract,
+        setLastContract,
       }}
     >
       {children}

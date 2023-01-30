@@ -1,42 +1,42 @@
-import HowToUseIt from "../Pages/HowToUseIt/HowToUseIt";
+import React from 'react';
 
-import { useDataContext } from "../../context/DataContext";
+import HowToUseIt from '../Pages/HowToUseIt';
 
-const Header = () => {
+import { useDataContext } from '../../context/DataContext';
+
+export const Header: React.FC = () => {
   const { setWhatBtnsToShow, whatBtnsToShow } = useDataContext();
-
-  const clickedReglmHandler = (
-    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
-  ) => setWhatBtnsToShow("regl");
-
-  const clickedNumbHandler = (
-    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
-  ) => setWhatBtnsToShow("num");
-
-  const clickedContractsHandler = (
-    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
-  ) => setWhatBtnsToShow("none");
 
   return (
     <>
       <div
         style={{
-          height: "5rem",
-          borderBottom: "1px solid",
-          borderColor: "black",
-          width: "90%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-around",
+          height: '5rem',
+          borderBottom: '1px solid',
+          borderColor: 'black',
+          width: '90%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-around',
         }}
       >
-        <div style={{ display: "flex", gap: "2rem" }}>
-          {whatBtnsToShow === "num" ? (
-            <h3 style={{ cursor: "pointer" }} onClick={clickedReglmHandler}>
+        <div style={{ display: 'flex', gap: '2rem' }}>
+          {whatBtnsToShow === 'num' ? (
+            <h3
+              style={{ cursor: 'pointer' }}
+              onClick={() => {
+                setWhatBtnsToShow('regl');
+              }}
+            >
               Reglamentai
             </h3>
           ) : (
-            <h3 style={{ cursor: "pointer" }} onClick={clickedNumbHandler}>
+            <h3
+              style={{ cursor: 'pointer' }}
+              onClick={() => {
+                setWhatBtnsToShow('num');
+              }}
+            >
               Numeriai
             </h3>
           )}
@@ -44,12 +44,15 @@ const Header = () => {
 
         <HowToUseIt />
 
-        <h3 style={{ cursor: "pointer" }} onClick={clickedContractsHandler}>
+        <h3
+          style={{ cursor: 'pointer' }}
+          onClick={() => {
+            setWhatBtnsToShow('none');
+          }}
+        >
           Sutartys
         </h3>
       </div>
     </>
   );
 };
-
-export default Header;

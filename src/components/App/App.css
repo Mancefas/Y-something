@@ -44,7 +44,7 @@
 }
 
 .btn:after {
-  content: "";
+  content: '';
   background-color: var(--main-color);
   width: 100%;
   z-index: -1;
@@ -122,7 +122,7 @@
   color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica,
     Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
