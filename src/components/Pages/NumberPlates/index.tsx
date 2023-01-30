@@ -1,3 +1,3 @@
-import { NumberPlates } from "./NumberPlates";
+import { NumberPlates } from './NumberPlates';
 
 export default NumberPlates;

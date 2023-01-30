@@ -1,12 +1,12 @@
-import { useState, createContext, useContext, ReactNode } from "react";
-import { data } from "../store/data";
+import { useState, createContext, useContext, type ReactNode } from 'react';
+import { data } from '../store/data';
 
-type DataContextTypes = {
-  dataToShow: { name: string; text: string; mostUsed?: boolean }[];
+interface DataContextTypes {
+  dataToShow: Array<{ name: string; text: string; mostUsed?: boolean }>;
   setDataToShow: (
-    item: { name: string; text: string; mostUsed?: boolean }[]
+    item: Array<{ name: string; text: string; mostUsed?: boolean }>
   ) => void;
-  initialData: { name: string; text: string; mostUsed?: boolean }[];
+  initialData: Array<{ name: string; text: string; mostUsed?: boolean }>;
   searchInput: string;
   setSearchInput: (item: string) => void;
   whatBtnsToShow: string;
@@ -15,21 +15,36 @@ type DataContextTypes = {
   setShowClipboard: (item: boolean) => void;
   lastContract: number;
   setLastContract: (item: number) => void;
-};
-const DataContext = createContext({} as DataContextTypes);
-
-export function useDataContext() {
-  return useContext(DataContext);
 }
 
-type DataContextProviderProps = {
-  children: ReactNode;
+const DataContext = createContext<DataContextTypes>({
+  dataToShow: [],
+  setDataToShow: () => {},
+  initialData: [],
+  searchInput: '',
+  setSearchInput: () => {},
+  whatBtnsToShow: '',
+  setWhatBtnsToShow: () => {},
+  showClipboard: false,
+  setShowClipboard: () => {},
+  lastContract: 0,
+  setLastContract: () => {},
+});
+
+export const useDataContext = (): DataContextTypes => {
+  return useContext(DataContext);
 };
 
-export function DataContextProvider({ children }: DataContextProviderProps) {
+interface DataContextProviderProps {
+  children: ReactNode;
+}
+
+export function DataContextProvider({
+  children,
+}: DataContextProviderProps): React.ReactElement {
   const [dataToShow, setDataToShow] = useState(data);
-  const [searchInput, setSearchInput] = useState("");
-  const [whatBtnsToShow, setWhatBtnsToShow] = useState("regl");
+  const [searchInput, setSearchInput] = useState('');
+  const [whatBtnsToShow, setWhatBtnsToShow] = useState('regl');
   const [showClipboard, setShowClipboard] = useState(false);
   const [lastContract, setLastContract] = useState(0);
 

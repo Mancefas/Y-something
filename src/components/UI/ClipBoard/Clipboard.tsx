@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import CheckMark from "./CheckMark";
-import { useDataContext } from "../../../context/DataContext";
+import CheckMark from './CheckMark';
+import { useDataContext } from '../../../context/DataContext';
 
-export const Clipboard = () => {
+export const Clipboard: React.FC = () => {
   const { showClipboard, setShowClipboard } = useDataContext();
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowClipboard(false), 1000);
+    const timer = setTimeout(() => {
+      setShowClipboard(false);
+    }, 1000);
     return () => {
       clearTimeout(timer);
     };

@@ -1,17 +1,19 @@
-import SortBtn from "../../UI/SortBtn";
-import SearchBtn from "../../UI/SearchBtn";
-import Clipboard from "../../UI/ClipBoard";
-import ReglamentBtn from "../../UI/ReglamentBtn";
+import React from 'react';
 
-import { useDataContext } from "../../../context/DataContext";
+import SortBtn from '../../UI/SortBtn';
+import SearchBtn from '../../UI/SearchBtn';
+import Clipboard from '../../UI/ClipBoard';
+import ReglamentBtn from '../../UI/ReglamentBtn';
 
-export const Reglaments = () => {
+import { useDataContext } from '../../../context/DataContext';
+
+export const Reglaments: React.FC = () => {
   const { dataToShow } = useDataContext();
 
   return (
     <>
       <Clipboard />
-      <div style={{ display: "flex" }}>
+      <div style={{ display: 'flex' }}>
         <SortBtn />
         <SearchBtn />
       </div>

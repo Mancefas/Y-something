@@ -1,3 +1,3 @@
-import { SortBtn } from "./SortBtn";
+import { SortBtn } from './SortBtn';
 
 export default SortBtn;

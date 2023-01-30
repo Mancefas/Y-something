@@ -1,3 +1,3 @@
-import { HowToUseIt } from "./HowToUseIt";
+import { HowToUseIt } from './HowToUseIt';
 
 export default HowToUseIt;

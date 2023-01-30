@@ -1,3 +1,3 @@
-import { Reglaments } from "./Reglaments";
+import { Reglaments } from './Reglaments';
 
 export default Reglaments;

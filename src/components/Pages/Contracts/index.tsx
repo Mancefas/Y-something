@@ -1,3 +1,3 @@
-import { Contracts } from "./Contracts";
+import { Contracts } from './Contracts';
 
 export default Contracts;

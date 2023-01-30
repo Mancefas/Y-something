@@ -1,3 +1,3 @@
-import { ReglamentBtn } from "./ReglamentBtn";
+import { ReglamentBtn } from './ReglamentBtn';
 
 export default ReglamentBtn;
