@@ -1,9 +1,10 @@
 import React from 'react';
 
-import SortBtn from '../../UI/SortBtn';
-import SearchBtn from '../../UI/SearchBtn';
+import FilterButton from '../../UI/FilterButton';
+import SearchInput from '../../UI/SearchInput';
 import Clipboard from '../../UI/ClipBoard';
 import ReglamentBtn from '../../UI/ReglamentBtn';
+import './reglaments.scss';
 
 import { useDataContext } from '../../../context/DataContext';
 
@@ -13,13 +14,13 @@ export const Reglaments: React.FC = () => {
   return (
     <>
       <Clipboard />
-      <div style={{ display: 'flex' }}>
-        <SortBtn />
-        <SearchBtn />
+      <div className="reglaments__inputs-container">
+        <FilterButton />
+        <SearchInput />
       </div>
-      <div className="btnsDiv">
+      <div className="reglaments__container">
         {dataToShow.map((e, i) => (
-          <ReglamentBtn key={i} id={e.name} />
+          <ReglamentBtn key={i} reglamentName={e.name} />
         ))}
       </div>
     </>

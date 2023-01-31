@@ -1,0 +1,7 @@
+@import '../../../scss/utilities/mixins';
+
+.number-plates {
+  &__container {
+    @include buttons-container;
+  }
+}

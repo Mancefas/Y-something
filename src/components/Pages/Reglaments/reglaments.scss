@@ -1,0 +1,11 @@
+@import '../../../scss/utilities/mixins';
+
+.reglaments {
+  &__inputs-container {
+    display: flex;
+  }
+
+  &__container {
+    @include buttons-container;
+  }
+}

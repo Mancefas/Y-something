@@ -1,57 +1,48 @@
 import React from 'react';
 
 import HowToUseIt from '../Pages/HowToUseIt';
-
 import { useDataContext } from '../../context/DataContext';
+
+import './header.scss';
 
 export const Header: React.FC = () => {
   const { setWhatBtnsToShow, whatBtnsToShow } = useDataContext();
 
   return (
     <>
-      <div
-        style={{
-          height: '5rem',
-          borderBottom: '1px solid',
-          borderColor: 'black',
-          width: '90%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}
-      >
-        <div style={{ display: 'flex', gap: '2rem' }}>
+      <div className="header__container">
+        <div>
           {whatBtnsToShow === 'num' ? (
-            <h3
-              style={{ cursor: 'pointer' }}
+            <a
+              className="header__navigation-button"
               onClick={() => {
                 setWhatBtnsToShow('regl');
               }}
             >
               Reglamentai
-            </h3>
+            </a>
           ) : (
-            <h3
-              style={{ cursor: 'pointer' }}
+            <a
+              className="header__navigation-button"
               onClick={() => {
                 setWhatBtnsToShow('num');
               }}
             >
               Numeriai
-            </h3>
+            </a>
           )}
         </div>
 
         <HowToUseIt />
 
-        <h3
-          style={{ cursor: 'pointer' }}
+        <a
+          className="header__navigation-button"
           onClick={() => {
             setWhatBtnsToShow('none');
           }}
         >
           Sutartys
-        </h3>
+        </a>
       </div>
     </>
   );
