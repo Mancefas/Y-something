@@ -1,0 +1,26 @@
+@import '../../../scss/utilities/mixins';
+@import '../../../scss/utilities/functions';
+@import '../../../scss/variables.scss';
+@import '../../App/App.scss';
+
+.confirm-contract {
+  &__error {
+    color: $error;
+  }
+
+  &__buttons-container {
+    margin-top: to-rem(16);
+    @include flex-box($justify-content: space-evenly);
+
+    & > :first-child {
+      border: 3px solid rgb(50, 186, 38);
+    }
+    & > :last-child {
+      border: 3px solid rgb(200, 37, 37);
+    }
+  }
+
+  &__button {
+    @extend .button-contract;
+  }
+}
