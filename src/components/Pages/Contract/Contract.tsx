@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import ConfirmNewContractData from '../../UI/ConfirmNewContract';
+import ConfirmNewContract from '../../UI/ConfirmNewContract';
 import { useDataContext } from '../../../context/DataContext';
 
 import './contract.scss';
@@ -77,7 +77,7 @@ export const Contract: React.FC = (): JSX.Element => {
       )}
 
       {isConfirmationShown && (
-        <ConfirmNewContractData
+        <ConfirmNewContract
           setIsNewContractBtnShown={setIsNewContractBtnShown}
           setIsConfirmationShown={setIsConfirmationShown}
         />

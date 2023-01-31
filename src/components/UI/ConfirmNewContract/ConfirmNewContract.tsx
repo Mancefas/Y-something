@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 import { DateForToday } from '../../../helpers/Helpers';
-
 import { useDataContext } from '../../../context/DataContext';
+import './confirm-new-contract.scss';
 
 interface ChildPropsType {
   setIsNewContractBtnShown: React.Dispatch<React.SetStateAction<boolean>>;
   setIsConfirmationShown: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ConfirmNewContractData: React.FC<ChildPropsType> = ({
+export const ConfirmNewContract: React.FC<ChildPropsType> = ({
   setIsNewContractBtnShown,
   setIsConfirmationShown,
 }) => {
@@ -53,25 +53,18 @@ export const ConfirmNewContractData: React.FC<ChildPropsType> = ({
   };
 
   return (
-    <div style={{ height: '35vh', paddingTop: '3rem' }}>
+    <div className="confirm-contract">
       <h3>Ar tikrai pridėti naują sutartį?</h3>
       {error !== '' && (
         <div>
-          <h3 style={{ color: 'red' }}>klaida : {error}</h3>
+          <h3 className="confirm-contract__error">klaida : {error}</h3>
         </div>
       )}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          marginTop: '2rem',
-        }}
-        className="buttons--container"
-      >
-        <button className="button-contract" onClick={yesBtnHandler}>
+      <div className="confirm-contract__buttons-container">
+        <button className="confirm-contract__button" onClick={yesBtnHandler}>
           TAIP
         </button>
-        <button className="button-contract" onClick={noBtnHandler}>
+        <button className="confirm-contract__button" onClick={noBtnHandler}>
           NE
         </button>
       </div>

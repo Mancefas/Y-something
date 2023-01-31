@@ -1,3 +1,3 @@
-import { ConfirmNewContractData } from './ConfirmNewContractData';
+import { ConfirmNewContract } from './ConfirmNewContract';
 
-export default ConfirmNewContractData;
+export default ConfirmNewContract;
