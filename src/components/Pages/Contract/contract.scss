@@ -1,0 +1,28 @@
+@import '../../App/App.scss';
+@import '../../../scss/utilities/mixins';
+@import '../../../scss/utilities/functions';
+@import '../../../scss/variables.scss';
+
+.contract {
+  &__container {
+    @include flex-box(column, center, center);
+    height: 70vh;
+    text-align: center;
+  }
+
+  &__error-text {
+    color: $error;
+  }
+
+  &__text-container {
+    margin-bottom: to-rem(48);
+  }
+
+  &__name {
+    color: $blue;
+  }
+
+  &__button {
+    @extend .button-contract;
+  }
+}

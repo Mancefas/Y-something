@@ -1,0 +1,17 @@
+@import '../../scss/utilities/mixins';
+@import '../../scss/utilities/functions';
+
+.header {
+  &__container {
+    @include flex-box(row, space-around, center);
+    border-bottom: 1px solid black;
+    width: 90%;
+    min-height: 10vh;
+  }
+
+  &__navigation-button {
+    font-size: to-rem(20);
+    font-weight: 600;
+    cursor: pointer;
+  }
+}

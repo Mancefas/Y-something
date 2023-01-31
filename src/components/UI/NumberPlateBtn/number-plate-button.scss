@@ -1,0 +1,7 @@
+@import '../../App/App.scss';
+
+.number-plate {
+  &__button {
+    @extend .button-main;
+  }
+}

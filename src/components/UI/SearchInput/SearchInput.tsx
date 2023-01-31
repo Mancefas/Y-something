@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 
 import { useDataContext } from '../../../context/DataContext';
+import './search-input.scss';
 
-export const SearchBtn: React.FC = () => {
+export const SearchInput: React.FC = () => {
   const { setDataToShow, initialData, searchInput, setSearchInput } =
     useDataContext();
 
@@ -21,10 +22,10 @@ export const SearchBtn: React.FC = () => {
   }, [searchInput]);
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div className="search__container">
       <input
         name="search"
-        className="seachInput"
+        className="search__input"
         placeholder="🔍Ieškoti"
         type="text"
         value={searchInput.toUpperCase()}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import ConfirmNewContractData from '../../UI/ConfirmNewContract';
-
 import { useDataContext } from '../../../context/DataContext';
 
-export const Contracts: React.FC = (): JSX.Element => {
+import './contract.scss';
+
+export const Contract: React.FC = (): JSX.Element => {
   const { lastContract, setLastContract } = useDataContext();
 
   const [lastContractDate, setLastContractDate] = useState<string>('');
@@ -49,26 +50,19 @@ export const Contracts: React.FC = (): JSX.Element => {
   };
 
   return (
-    <div
-      style={{
-        height: '70vh',
-        textAlign: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
+    <div className="contract__container">
       {isLoading && <h4>kraunama...⏳</h4>}
       {error !== '' && (
-        <h4 style={{ color: 'red' }}>Klaida gaunant duomenis : {error}</h4>
+        <h4 className="contract__error-text">
+          Klaida gaunant duomenis : {error}
+        </h4>
       )}
 
       {!isLoading && error === '' && lastContract !== 0 && (
-        <div style={{ marginBottom: '3rem' }}>
+        <div className="contract__text-container">
           <h2>
             Laisva sutartis :{' '}
-            <span style={{ color: 'blue' }}>
+            <span className="contract__name">
               NCB-
               {lastContract}
             </span>
@@ -77,7 +71,7 @@ export const Contracts: React.FC = (): JSX.Element => {
         </div>
       )}
       {isNewContractBtnShown && error === '' && !isLoading && (
-        <button className="button-contract" onClick={newContractHandler}>
+        <button className="contract__button" onClick={newContractHandler}>
           SUDARIAU NAUJĄ
         </button>
       )}

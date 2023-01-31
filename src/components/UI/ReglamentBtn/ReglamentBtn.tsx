@@ -2,12 +2,13 @@ import React from 'react';
 
 import { sameText } from '../../../store/data';
 import { useDataContext } from '../../../context/DataContext';
+import './reglament-button.scss';
 
 interface PropTypes {
-  id: string;
+  reglamentName: string;
 }
 
-export const ReglamentBtn = ({ id }: PropTypes): JSX.Element => {
+export const ReglamentBtn = ({ reglamentName }: PropTypes): JSX.Element => {
   const { dataToShow, setShowClipboard } = useDataContext();
 
   const handleClick = (
@@ -40,8 +41,12 @@ export const ReglamentBtn = ({ id }: PropTypes): JSX.Element => {
   };
 
   return (
-    <button className="btn" id={id} onClick={handleClick}>
-      {id}
+    <button
+      className="reglament-button"
+      id={reglamentName}
+      onClick={handleClick}
+    >
+      {reglamentName}
     </button>
   );
 };

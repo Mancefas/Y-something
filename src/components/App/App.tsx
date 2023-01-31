@@ -3,11 +3,11 @@ import React from 'react';
 import Header from '../Header';
 import NumberPlates from '../Pages/NumberPlates';
 import Reglaments from '../Pages/Reglaments';
-import Contracts from '../Pages/Contracts';
+import Contract from '../Pages/Contract';
 
 import { useDataContext } from '../../context/DataContext';
 
-import './App.css';
+import './App.scss';
 
 const App: React.FC = () => {
   const { whatBtnsToShow } = useDataContext();
@@ -19,7 +19,7 @@ const App: React.FC = () => {
       ) : whatBtnsToShow === 'num' ? (
         <NumberPlates />
       ) : (
-        <Contracts />
+        <Contract />
       )}
     </div>
   );

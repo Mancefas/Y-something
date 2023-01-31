@@ -1,0 +1,11 @@
+@import '../../App/App.scss';
+@import '../../../scss/utilities/mixins';
+
+.search {
+  &__container {
+    @include flex-box($align-items: center);
+  }
+  &__input {
+    @extend .seach-input;
+  }
+}
