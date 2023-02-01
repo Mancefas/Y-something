@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
                 setWhatBtnsToShow('regl');
               }}
             >
-              Reglamentai
+              Reglamentai 📜
             </a>
           ) : (
             <a
@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
                 setWhatBtnsToShow('num');
               }}
             >
-              Numeriai
+              🚛 Numeriai
             </a>
           )}
         </div>
