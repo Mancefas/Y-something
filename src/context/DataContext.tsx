@@ -1,5 +1,5 @@
 import { useState, createContext, useContext, type ReactNode } from 'react';
-import { data } from '../store/data';
+import { data } from 'Store/data';
 
 interface DataContextTypes {
   dataToShow: Array<{ name: string; text: string; mostUsed?: boolean }>;

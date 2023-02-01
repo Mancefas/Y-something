@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import App from 'Components/App/App';
+import { DataContextProvider } from 'Context/DataContext';
+
 import './index.css';
-import App from './components/App/App';
-import { DataContextProvider } from './context/DataContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
