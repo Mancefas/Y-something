@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HowToUseIt from '../Pages/HowToUseIt';
-import { useDataContext } from '../../context/DataContext';
+import HowToUseIt from 'Components/Pages/HowToUseIt';
+import { useDataContext } from 'Context/DataContext';
 
 import './header.scss';
 

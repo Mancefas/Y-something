@@ -25,4 +25,11 @@ module.exports = {
     'arrow-body-style': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
+  },
 };

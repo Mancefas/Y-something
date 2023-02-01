@@ -1,12 +1,13 @@
 import React from 'react';
 
-import FilterButton from '../../UI/FilterButton';
-import SearchInput from '../../UI/SearchInput';
-import Clipboard from '../../UI/ClipBoard';
-import ReglamentBtn from '../../UI/ReglamentBtn';
+import FilterButton from 'Components/UI/FilterButton';
+import SearchInput from 'Components/UI/SearchInput';
+import Clipboard from 'Components/UI/ClipBoard';
+import ReglamentBtn from 'Components/UI/ReglamentBtn';
+
 import './reglaments.scss';
 
-import { useDataContext } from '../../../context/DataContext';
+import { useDataContext } from 'Context/DataContext';
 
 export const Reglaments: React.FC = () => {
   const { dataToShow } = useDataContext();

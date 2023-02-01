@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { useDataContext } from '../../../context/DataContext';
+import { useDataContext } from 'Context/DataContext';
+
 import './filter-button.scss';
 
 export const FilterButton: React.FC = () => {

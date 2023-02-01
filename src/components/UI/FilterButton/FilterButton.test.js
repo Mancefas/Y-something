@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 import App from '../../App/App';
 import Reglaments from '../../Pages/Reglaments/Reglaments';
-import { DataContextProvider } from '../../../context/DataContext';
+import { DataContextProvider } from '../../../Context/DataContext';
 
 const data = [
   { name: 'T1', text: 'Test' },

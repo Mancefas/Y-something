@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { sameText } from '../../../store/data';
-import { useDataContext } from '../../../context/DataContext';
+import { sameText } from 'Store/data';
+import { useDataContext } from 'Context/DataContext';
+
 import './reglament-button.scss';
 
 interface PropTypes {
