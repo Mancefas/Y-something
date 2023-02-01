@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
-import { useDataContext } from '../../../context/DataContext';
+import { useDataContext } from 'Context/DataContext';
+
 import './search-input.scss';
 
 export const SearchInput: React.FC = () => {

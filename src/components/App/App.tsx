@@ -1,11 +1,10 @@
 import React from 'react';
 
-import Header from '../Header';
-import NumberPlates from '../Pages/NumberPlates';
-import Reglaments from '../Pages/Reglaments';
-import Contract from '../Pages/Contract';
-
-import { useDataContext } from '../../context/DataContext';
+import Header from 'Components/Header';
+import NumberPlates from 'Components/Pages/NumberPlates';
+import Reglaments from 'Components/Pages/Reglaments';
+import Contract from 'Components/Pages/Contract';
+import { useDataContext } from 'Context/DataContext';
 
 import './App.scss';
 

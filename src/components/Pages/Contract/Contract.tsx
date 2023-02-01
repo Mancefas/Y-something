@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import ConfirmNewContract from '../../UI/ConfirmNewContract';
-import { useDataContext } from '../../../context/DataContext';
+import ConfirmNewContract from 'Components/UI/ConfirmNewContract';
+
+import { useDataContext } from 'Context/DataContext';
 
 import './contract.scss';
 

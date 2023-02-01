@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Clipboard from '../../UI/ClipBoard';
-import { nrPlates } from '../../../store/data';
+import Clipboard from 'Components/UI/ClipBoard';
+import NumberPlateBtn from 'Components/UI/NumberPlateBtn';
+import { nrPlates } from 'Store/data';
 
 import './number-plates.scss';
-import NumberPlateBtn from '../../UI/NumberPlateBtn';
 
 export const NumberPlates: React.FC = () => {
   return (
