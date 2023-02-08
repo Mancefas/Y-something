@@ -1,5 +1,6 @@
-@import '../../scss/utilities/mixins';
-@import '../../scss/utilities/functions';
+@import 'scss/utilities/mixins';
+@import 'scss/utilities/functions';
+@import 'Scss/variables.scss';
 
 .header {
   &__container {
@@ -11,7 +12,11 @@
 
   &__navigation-button {
     font-size: to-rem(20);
-    font-weight: 600;
+    font-weight: 500;
+    color: $gray50;
     cursor: pointer;
+    &:hover {
+      color: $gray100;
+    }
   }
 }
