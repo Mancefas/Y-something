@@ -5,7 +5,7 @@
 
 .confirm-contract {
   &__error {
-    color: $error;
+    color: $red75;
   }
 
   &__buttons-container {
@@ -13,10 +13,10 @@
     @include flex-box($justify-content: space-evenly);
 
     & > :first-child {
-      border: 3px solid rgb(50, 186, 38);
+      border: 3px solid $green75;
     }
     & > :last-child {
-      border: 3px solid rgb(200, 37, 37);
+      border: 3px solid $red75;
     }
   }
 
