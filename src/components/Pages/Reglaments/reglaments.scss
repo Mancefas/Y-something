@@ -1,8 +1,9 @@
-@import '../../../scss/utilities/mixins';
+@import 'scss/utilities/mixins';
 
 .reglaments {
   &__inputs-container {
     display: flex;
+    gap: 1rem;
   }
 
   &__container {
