@@ -1,7 +1,18 @@
-@import '../../App/App.scss';
-@import '../../../scss/utilities/functions';
+@import 'scss/variables.scss';
+@import 'scss/utilities/functions';
 
 .filter-button {
-  @extend .button-filter;
   min-width: to-rem(115);
+  text-align: center;
+  padding: to-rem(9) to-rem(24);
+  background-color: $white;
+  border: 2px solid $green25;
+  border-radius: 4px;
+  color: $green100;
+  font-weight: 600;
+  height: to-rem(42);
+
+  &:hover {
+    background-color: $green25;
+  }
 }

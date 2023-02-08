@@ -79,28 +79,6 @@
   box-shadow: 0.05em 0.05em;
 }
 
-.seach-input {
-  background: $main-color;
-  color: black;
-  font-family: inherit;
-  width: to-rem(112);
-  padding: 0.3em 0.3em;
-  font-size: to-rem(18);
-  border-radius: to-rem(7);
-  box-shadow: 0.01em 0.01em;
-  margin: to-rem(8);
-}
-
-.seach-input:focus {
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.05em 0.05em;
-}
-
-.seach-input::placeholder {
-  color: black;
-  font-weight: 400;
-}
-
 /* Added new contract btn */
 
 .button-contract {

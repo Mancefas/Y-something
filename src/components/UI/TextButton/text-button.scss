@@ -1,0 +1,12 @@
+@import 'Scss/variables.scss';
+@import 'Scss/utilities/functions';
+
+.text-button {
+  font-size: to-rem(20);
+  font-weight: 500;
+  color: $gray50;
+  cursor: pointer;
+  &:hover {
+    color: $gray100;
+  }
+}

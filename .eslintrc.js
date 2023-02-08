@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    endOfLine: 'off',
     'no-unused-vars': 0,
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     'react/react-in-jsx-scope': ['off'],

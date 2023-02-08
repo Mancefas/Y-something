@@ -2,6 +2,7 @@ import React from 'react';
 
 import HowToUseIt from 'Components/Pages/HowToUseIt';
 import { useDataContext } from 'Context/DataContext';
+import { TextButton } from 'Components/UI/TextButton/TextButton';
 
 import './header.scss';
 
@@ -13,36 +14,30 @@ export const Header: React.FC = () => {
       <div className="header__container">
         <div>
           {whatBtnsToShow === 'num' ? (
-            <a
-              className="header__navigation-button"
-              onClick={() => {
+            <TextButton
+              text="Reglamentai 📜"
+              clickFunction={() => {
                 setWhatBtnsToShow('regl');
               }}
-            >
-              Reglamentai
-            </a>
+            />
           ) : (
-            <a
-              className="header__navigation-button"
-              onClick={() => {
+            <TextButton
+              text="🚛 Numeriai"
+              clickFunction={() => {
                 setWhatBtnsToShow('num');
               }}
-            >
-              Numeriai
-            </a>
+            />
           )}
         </div>
 
         <HowToUseIt />
 
-        <a
-          className="header__navigation-button"
-          onClick={() => {
+        <TextButton
+          text="Sutartys"
+          clickFunction={() => {
             setWhatBtnsToShow('none');
           }}
-        >
-          Sutartys
-        </a>
+        />
       </div>
     </>
   );

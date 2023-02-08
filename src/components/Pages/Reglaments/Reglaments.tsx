@@ -4,10 +4,9 @@ import FilterButton from 'Components/UI/FilterButton';
 import SearchInput from 'Components/UI/SearchInput';
 import Clipboard from 'Components/UI/ClipBoard';
 import ReglamentBtn from 'Components/UI/ReglamentBtn';
+import { useDataContext } from 'Context/DataContext';
 
 import './reglaments.scss';
-
-import { useDataContext } from 'Context/DataContext';
 
 export const Reglaments: React.FC = () => {
   const { dataToShow } = useDataContext();
