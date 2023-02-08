@@ -1,5 +1,5 @@
-@import 'scss/utilities/mixins';
-@import 'scss/utilities/functions';
+@import 'Scss/utilities/mixins';
+@import 'Scss/utilities/functions';
 @import 'Scss/variables.scss';
 
 .header {
@@ -8,15 +8,5 @@
     border-bottom: 1px solid black;
     width: 90%;
     min-height: 10vh;
-  }
-
-  &__navigation-button {
-    font-size: to-rem(20);
-    font-weight: 500;
-    color: $gray50;
-    cursor: pointer;
-    &:hover {
-      color: $gray100;
-    }
   }
 }
