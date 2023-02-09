@@ -1,0 +1,39 @@
+@import 'Scss/utilities/functions';
+@import 'Scss/variables.scss';
+
+@mixin button-main {
+  color: $text-color;
+  font-size: to-rem(16);
+  font-weight: 700;
+  letter-spacing: to-rem(1);
+  padding: to-rem(13) to-rem(20) to-rem(13);
+  outline: 0;
+  border: 1px solid $gray100;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:after {
+    content: '';
+    // background-color: $green25;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: to-rem(7);
+    left: to-rem(7);
+    transition: 0.2s;
+  }
+
+  &:hover:after {
+    top: 0px;
+    left: 0px;
+  }
+
+  @media (min-width: 768px) {
+    padding: to-rem(13) to-rem(50) to-rem(13);
+  }
+}

@@ -1,7 +1,6 @@
-@import '../../../scss/utilities/mixins';
-@import '../../../scss/utilities/functions';
-@import '../../../scss/variables.scss';
-@import '../../App/App.scss';
+@import 'Scss/utilities/mixins';
+@import 'Scss/utilities/functions';
+@import 'Scss/variables.scss';
 
 .confirm-contract {
   &__error {
@@ -17,10 +16,13 @@
     }
     & > :last-child {
       border: 3px solid $red75;
+      &:hover {
+        background-color: $red25;
+      }
     }
   }
 
   &__button {
-    @extend .button-contract;
+    @include button-secondary;
   }
 }

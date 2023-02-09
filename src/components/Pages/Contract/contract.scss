@@ -1,7 +1,6 @@
-@import '../../App/App.scss';
-@import '../../../scss/utilities/mixins';
-@import '../../../scss/utilities/functions';
-@import '../../../scss/variables.scss';
+@import 'Scss/utilities/mixins';
+@import 'Scss/utilities/functions';
+@import 'Scss/variables.scss';
 
 .contract {
   &__container {
@@ -23,6 +22,6 @@
   }
 
   &__button {
-    @extend .button-contract;
+    @include button-primary;
   }
 }
