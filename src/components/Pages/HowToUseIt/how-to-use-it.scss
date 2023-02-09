@@ -1,7 +1,6 @@
-@import '../../../scss/utilities/mixins';
-@import '../../../scss/utilities/functions';
-@import '../../../scss/variables.scss';
-@import '../../App/App.scss';
+@import 'Scss/utilities/mixins/';
+@import 'Scss/utilities/functions';
+@import 'Scss/variables.scss';
 
 .use-instruction {
   &__modal-outter {
@@ -60,6 +59,10 @@
   }
 
   &__button {
-    @extend .button-main;
+    @include button-main;
+
+    &::after {
+      background-color: $green25;
+    }
   }
 }

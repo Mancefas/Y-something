@@ -1,5 +1,10 @@
-@import '../../App/App.scss';
+@import 'Scss/utilities/mixins/';
+@import 'Scss/variables.scss';
 
 .reglament-button {
-  @extend .button-main;
+  @include button-main;
+
+  &::after {
+    background-color: $green25;
+  }
 }
