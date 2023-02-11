@@ -1,0 +1,55 @@
+@import 'Scss/utilities/functions/';
+@import 'Scss/variables.scss';
+
+.side-navigation {
+  $_this: &;
+
+  width: to-rem(50);
+  height: 100vh;
+  background-color: $gray100;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: width 200ms ease;
+
+  &:hover {
+    width: to-rem(150);
+
+    #{$_this}__item-text {
+      display: block;
+      color: $white;
+      padding-left: to-rem(16);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 50%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    min-height: to-rem(22);
+    margin: to-rem(16);
+    cursor: pointer;
+
+    &:last-child {
+      margin-top: auto;
+    }
+
+    &-icon {
+      min-width: to-rem(22);
+      color: $gray50;
+    }
+
+    &-text {
+      display: none;
+    }
+  }
+}

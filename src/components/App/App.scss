@@ -9,11 +9,12 @@
 .App {
   min-height: 85vh;
   height: fit-content;
-  width: 90vw;
-  margin: auto;
+  width: 100%;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: to-rem(16);
+  margin-left: 5rem;
 }

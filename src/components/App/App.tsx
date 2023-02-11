@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Header from 'Components/Header';
 import NumberPlates from 'Components/Pages/NumberPlates';
 import Reglaments from 'Components/Pages/Reglaments';
 import Contract from 'Components/Pages/Contract';
+import SideNavigation from 'Components/SideNavigation';
 import { useDataContext } from 'Context/DataContext';
 
 import './App.scss';
@@ -11,16 +11,20 @@ import './App.scss';
 const App: React.FC = () => {
   const { whatBtnsToShow } = useDataContext();
   return (
-    <div className="App">
-      <Header />
-      {whatBtnsToShow === 'regl' ? (
-        <Reglaments />
-      ) : whatBtnsToShow === 'num' ? (
-        <NumberPlates />
-      ) : (
-        <Contract />
-      )}
-    </div>
+    <>
+      <div style={{ display: 'flex' }}>
+        <SideNavigation />
+        <div className="App">
+          {whatBtnsToShow === 'regl' ? (
+            <Reglaments />
+          ) : whatBtnsToShow === 'num' ? (
+            <NumberPlates />
+          ) : (
+            <Contract />
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 
