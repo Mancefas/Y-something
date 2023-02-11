@@ -12,7 +12,7 @@ export const Reglaments: React.FC = () => {
   const { dataToShow } = useDataContext();
 
   return (
-    <>
+    <div className="reglaments">
       <Clipboard />
       <div className="reglaments__inputs-container">
         <FilterButton />
@@ -23,6 +23,6 @@ export const Reglaments: React.FC = () => {
           <ReglamentBtn key={i} reglamentName={e.name} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
