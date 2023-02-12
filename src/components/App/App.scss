@@ -16,5 +16,9 @@
   align-items: center;
   justify-content: center;
   gap: to-rem(16);
-  margin-left: 5rem;
+  margin-left: to-rem(80);
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
 }
