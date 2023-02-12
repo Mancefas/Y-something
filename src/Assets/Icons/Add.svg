@@ -1,6 +1,7 @@
-<svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13.3267 15.0759C12.8886 15.0255 12.4452 15 12 15C10.0805 15 8.19383 15.4738 6.63113 16.3732C5.06902 17.2721 3.88124 18.5702 3.33091 20.1106C3.1451 20.6307 3.41608 21.203 3.93617 21.3888C4.45626 21.5746 5.02851 21.3036 5.21432 20.7835C5.57558 19.7723 6.39653 18.8157 7.62872 18.1066C8.64272 17.523 9.86375 17.1503 11.158 17.0368C11.4889 16.0601 12.3091 15.3092 13.3267 15.0759Z" fill="currentColor"/>
-<path d="M18 14L18 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M22 18L14 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="8" r="4" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+<path d="m13.327 15.076c-0.4381-0.0504-0.8815-0.0759-1.3267-0.0759-1.9195 0-3.8062 0.4738-5.3689 1.3732-1.5621 0.8989-2.7499 2.197-3.3002 3.7374-0.18581 0.5201 0.08517 1.0924 0.60526 1.2782s1.0923-0.0852 1.2782-0.6053c0.36126-1.0112 1.1822-1.9678 2.4144-2.6769 1.014-0.5836 2.235-0.9563 3.5293-1.0698 0.3309-0.9767 1.1511-1.7276 2.1687-1.9609z" clip-rule="evenodd" fill="currentColor" fill-rule="evenodd"/>
+<path d="m18 14v8" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/>
+<path d="m22 18h-8" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"/>
 </svg>
