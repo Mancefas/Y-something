@@ -16,7 +16,7 @@
   &:hover {
     width: to-rem(150);
 
-    #{$_this}__item-text {
+    #{$_this}__button-text {
       display: block;
       color: $white;
       padding-left: to-rem(16);
@@ -34,17 +34,22 @@
 
   &__item {
     display: flex;
-    justify-content: flex-start;
-    min-height: to-rem(22);
-    margin: to-rem(16);
-    cursor: pointer;
+    margin: to-rem(8);
 
     &:last-child {
       margin-top: auto;
     }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     &-icon {
-      min-width: to-rem(22);
+      min-width: to-rem(30);
       color: $gray50;
     }
 
