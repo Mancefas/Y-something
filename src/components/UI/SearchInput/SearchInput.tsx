@@ -15,7 +15,7 @@ export const SearchInput: React.FC = () => {
       );
       setDataToShow(findDataWithInput);
     } else if (searchInput === '') {
-      setDataToShow(initialData);
+      setDataToShow(initialData.filter((e) => e.mostUsed === true));
     }
     // eslint-disable-next-line
   }, [searchInput]);

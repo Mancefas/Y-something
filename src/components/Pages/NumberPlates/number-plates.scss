@@ -1,7 +1,14 @@
-@import '../../../scss/utilities/mixins';
+@import 'Scss/utilities/mixins';
+@import 'Scss/utilities/functions';
 
 .number-plates {
   &__container {
+    transform: translateY(to-rem(4));
+
+    @media (max-width: 768px) {
+      transform: translateY(to-rem(27));
+    }
+
     @include buttons-container;
   }
 }

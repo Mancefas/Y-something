@@ -1,9 +1,10 @@
 @mixin buttons-container {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   gap: 1rem;
-  width: 70%;
-  margin-bottom: 2rem;
-  margin: auto;
-  padding: 2rem 0;
 }
