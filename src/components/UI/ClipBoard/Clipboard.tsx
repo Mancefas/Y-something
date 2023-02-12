@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 
 import { useDataContext } from 'Context/DataContext';
+import { ReactComponent as CheckMark } from 'Assets/Icons/CheckMark.svg';
 
-import CheckMark from './CheckMark';
+import './clipboard.scss';
 
 export const Clipboard: React.FC = () => {
   const { showClipboard, setShowClipboard } = useDataContext();
@@ -17,5 +18,9 @@ export const Clipboard: React.FC = () => {
     // eslint-disable-next-line
   }, [showClipboard]);
 
-  return <>{showClipboard && <CheckMark />}</>;
+  return (
+    <div className={`clipboard${showClipboard ? '__show' : ''}`}>
+      <CheckMark />
+    </div>
+  );
 };

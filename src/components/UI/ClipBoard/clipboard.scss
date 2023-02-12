@@ -1,0 +1,11 @@
+@import 'Scss/utilities/functions/';
+
+.clipboard {
+  opacity: 0;
+  width: to-rem(30);
+
+  &__show {
+    opacity: 1;
+    width: to-rem(30);
+  }
+}
