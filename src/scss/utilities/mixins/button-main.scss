@@ -33,7 +33,7 @@
     left: 0px;
   }
 
-  &:focus::after {
+  &:focus-visible::after {
     top: 0px;
     left: 0px;
   }
