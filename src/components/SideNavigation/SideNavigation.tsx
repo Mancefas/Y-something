@@ -3,13 +3,14 @@ import React from 'react';
 import { ReactComponent as AddIcon } from 'assets/icons/Add.svg';
 import { ReactComponent as Paper } from 'assets/icons/Paper.svg';
 import { ReactComponent as TruckIcon } from 'assets/icons/Truck.svg';
+import { ReactComponent as Question } from 'assets/icons/Question.svg';
 import { useDataContext } from 'context/DataContext';
 
 import { SideNavigationButton } from './SideNavigationButton';
 import './side-navigation.scss';
 
 export const SideNavigation: React.FC = () => {
-  const { setWhatBtnsToShow } = useDataContext();
+  const { setIsShowingPage } = useDataContext();
 
   return (
     <nav className="side-navigation">
@@ -17,7 +18,7 @@ export const SideNavigation: React.FC = () => {
         <li className="side-navigation__item">
           <SideNavigationButton
             clickFunction={() => {
-              setWhatBtnsToShow('regl');
+              setIsShowingPage('reglaments');
             }}
             Icon={<Paper />}
             text="Reglamentai"
@@ -27,7 +28,7 @@ export const SideNavigation: React.FC = () => {
         <li className="side-navigation__item">
           <SideNavigationButton
             clickFunction={() => {
-              setWhatBtnsToShow('num');
+              setIsShowingPage('numbers');
             }}
             Icon={<TruckIcon />}
             text="Numeriai"
@@ -37,10 +38,20 @@ export const SideNavigation: React.FC = () => {
         <li className="side-navigation__item">
           <SideNavigationButton
             clickFunction={() => {
-              setWhatBtnsToShow('none');
+              setIsShowingPage('none');
             }}
             Icon={<AddIcon />}
             text="Sutartys"
+          />
+        </li>
+
+        <li className="side-navigation__item">
+          <SideNavigationButton
+            clickFunction={() => {
+              setIsShowingPage('howToUseIt');
+            }}
+            Icon={<Question />}
+            text="Naudojimas"
           />
         </li>
       </ul>

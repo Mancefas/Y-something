@@ -10,7 +10,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   transition: width 200ms ease;
 
   @media screen and (max-width: 768px) {
@@ -19,6 +19,7 @@
     height: to-rem(60);
     flex-direction: row;
     z-index: 1;
+    justify-content: center;
   }
 
   &:hover {
@@ -45,7 +46,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    height: 50%;
+    height: 70%;
 
     @media screen and (max-width: 768px) {
       flex-direction: row;
@@ -58,6 +59,10 @@
   &__item {
     display: flex;
     margin: to-rem(8);
+
+    @media screen and (max-width: 768px) {
+      margin: 0;
+    }
 
     &:last-child {
       margin-top: auto;

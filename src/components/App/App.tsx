@@ -7,18 +7,21 @@ import SideNavigation from 'components/SideNavigation';
 import { useDataContext } from 'context/DataContext';
 
 import './App.scss';
+import HowToUseIt from 'components/Pages/HowToUseIt';
 
 const App: React.FC = () => {
-  const { whatBtnsToShow } = useDataContext();
+  const { isShowingPage } = useDataContext();
   return (
     <>
       <div style={{ display: 'flex' }}>
         <SideNavigation />
         <div className="App">
-          {whatBtnsToShow === 'regl' ? (
+          {isShowingPage === 'reglaments' ? (
             <Reglaments />
-          ) : whatBtnsToShow === 'num' ? (
+          ) : isShowingPage === 'numbers' ? (
             <NumberPlates />
+          ) : isShowingPage === 'howToUseIt' ? (
+            <HowToUseIt />
           ) : (
             <Contract />
           )}
