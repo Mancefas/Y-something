@@ -6,6 +6,8 @@ import { useDataContext } from 'context/DataContext';
 
 import './contract.scss';
 
+console.log(process.env.REACT_APP_SERVER_URL);
+
 export const Contract: React.FC = (): JSX.Element => {
   const { lastContract, setLastContract } = useDataContext();
 
@@ -34,9 +36,8 @@ export const Contract: React.FC = (): JSX.Element => {
         throw new Error(response.statusText);
       }
     } catch (err) {
-      console.error(err);
       setIsLoading(false);
-      setError(err as string);
+      setError((err as Error).message);
     }
   };
 
