@@ -14,7 +14,11 @@ export const SideNavigationButton: React.FC<propTypes> = ({
   text,
 }) => {
   return (
-    <button className="side-navigation__button" onClick={clickFunction}>
+    <button
+      aria-label={text}
+      className="side-navigation__button"
+      onClick={clickFunction}
+    >
       <div className="side-navigation__button-icon">{Icon}</div>
       <span className="side-navigation__button-text">{text}</span>
     </button>
