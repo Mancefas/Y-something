@@ -1,6 +1,6 @@
-@import 'Scss/utilities/mixins';
-@import 'Scss/utilities/functions';
-@import 'Scss/variables.scss';
+@import 'scss/utilities/mixins';
+@import 'scss/utilities/functions';
+@import 'scss/variables.scss';
 
 .search {
   &__container {
@@ -9,8 +9,9 @@
   &__input {
     width: to-rem(100);
     height: to-rem(38);
+    margin: to-rem(16) 0;
     font-size: to-rem(16);
-    padding: 0 0.3em;
+    padding: 0 to-rem(5);
     border-radius: 4px;
     border: 2px solid $gray15;
 

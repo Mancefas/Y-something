@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { sameText } from 'Store/data';
-import { useDataContext } from 'Context/DataContext';
+import { sameText } from 'store/data';
+import { useDataContext } from 'context/DataContext';
 
 import './reglament-button.scss';
 

@@ -1,7 +1,0 @@
-@import 'Scss/variables.scss';
-@import 'Scss/utilities/functions';
-@import 'Scss/utilities/mixins/';
-
-.filter-button {
-  @include button-secondary;
-}

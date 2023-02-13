@@ -1,5 +1,5 @@
-@import 'Scss/variables.scss';
-@import 'Scss/utilities/functions/index.scss';
+@import 'scss/variables.scss';
+@import 'scss/utilities/functions/index.scss';
 
 * {
   margin: 0;
@@ -7,13 +7,19 @@
 }
 
 .App {
-  min-height: 85vh;
+  min-height: 100vh;
   height: fit-content;
-  width: 90vw;
-  margin: auto;
+  width: 100%;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: to-rem(16);
+  margin-left: to-rem(80);
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    margin-bottom: to-rem(80);
+  }
 }

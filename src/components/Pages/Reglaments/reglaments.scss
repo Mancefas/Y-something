@@ -1,11 +1,7 @@
 @import 'scss/utilities/mixins';
+@import 'scss/utilities/functions';
 
 .reglaments {
-  &__inputs-container {
-    display: flex;
-    gap: 1rem;
-  }
-
   &__container {
     @include buttons-container;
   }

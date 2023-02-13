@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useDataContext } from 'Context/DataContext';
-import { nrPlates } from 'Store/data';
+import { useDataContext } from 'context/DataContext';
+import { nrPlates } from 'store/data';
 
 import './number-plate-button.scss';
 

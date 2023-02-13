@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { DateForToday } from 'Helpers/Helpers';
-import { useDataContext } from 'Context/DataContext';
+import { DateForToday } from 'helpers/Helpers';
+import { useDataContext } from 'context/DataContext';
 
 import './confirm-new-contract.scss';
 
