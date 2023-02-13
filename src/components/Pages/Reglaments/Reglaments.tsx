@@ -1,10 +1,10 @@
 import React from 'react';
 
-import SearchInput from 'Components/UI/SearchInput';
-import Clipboard from 'Components/UI/ClipBoard';
-import ReglamentBtn from 'Components/UI/ReglamentBtn';
-import PageLayout from 'Components/Layouts/PageLayout';
-import { useDataContext } from 'Context/DataContext';
+import SearchInput from 'components/UI/SearchInput';
+import Clipboard from 'components/UI/ClipBoard';
+import ReglamentBtn from 'components/UI/ReglamentBtn';
+import PageLayout from 'components/Layouts/PageLayout';
+import { useDataContext } from 'context/DataContext';
 
 import './reglaments.scss';
 

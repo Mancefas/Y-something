@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HowToUseIt from 'Components/Pages/HowToUseIt';
-import { useDataContext } from 'Context/DataContext';
-import { TextButton } from 'Components/UI/TextButton/TextButton';
+import HowToUseIt from 'components/Pages/HowToUseIt';
+import { useDataContext } from 'context/DataContext';
+import { TextButton } from 'components/UI/TextButton/TextButton';
 
 import './header.scss';
 

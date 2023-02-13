@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Clipboard from 'Components/UI/ClipBoard';
-import NumberPlateBtn from 'Components/UI/NumberPlateBtn';
-import PageLayout from 'Components/Layouts/PageLayout';
-import { nrPlates } from 'Store/data';
+import Clipboard from 'components/UI/ClipBoard';
+import NumberPlateBtn from 'components/UI/NumberPlateBtn';
+import PageLayout from 'components/Layouts/PageLayout';
+import { nrPlates } from 'store/data';
 
 import './number-plates.scss';
 

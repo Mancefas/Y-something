@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { ReactComponent as AddIcon } from 'Assets/Icons/Add.svg';
-import { ReactComponent as Paper } from 'Assets/Icons/Paper.svg';
-import { ReactComponent as TruckIcon } from 'Assets/Icons/Truck.svg';
-import { useDataContext } from 'Context/DataContext';
-import { SideNavigationButton } from './SideNavigationButton';
+import { ReactComponent as AddIcon } from 'assets/icons/Add.svg';
+import { ReactComponent as Paper } from 'assets/icons/Paper.svg';
+import { ReactComponent as TruckIcon } from 'assets/icons/Truck.svg';
+import { useDataContext } from 'context/DataContext';
 
+import { SideNavigationButton } from './SideNavigationButton';
 import './side-navigation.scss';
 
 export const SideNavigation: React.FC = () => {

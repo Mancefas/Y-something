@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { useDataContext } from 'Context/DataContext';
+import { useDataContext } from 'context/DataContext';
 
 import './search-input.scss';
 
