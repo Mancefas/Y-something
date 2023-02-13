@@ -18,6 +18,7 @@
     width: 100vw;
     height: to-rem(60);
     flex-direction: row;
+    z-index: 1;
   }
 
   &:hover {
