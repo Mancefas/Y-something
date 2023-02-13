@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { useDataContext } from 'context/DataContext';
-import { ReactComponent as CheckMark } from 'Assets/Icons/CheckMark.svg';
+import { ReactComponent as CheckMark } from 'assets/icons/CheckMark.svg';
 
 import './clipboard.scss';
 
