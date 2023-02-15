@@ -1,6 +1,6 @@
 @import 'scss/utilities/mixins/';
 @import 'scss/utilities/functions';
-@import 'scss/variables.scss';
+@import 'scss/variables';
 
 .use-instruction {
   @include flex-box(column, center, center);
@@ -10,9 +10,9 @@
   }
 
   &__button-container {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   // getting first arrow
@@ -25,22 +25,18 @@
   }
 
   &__paragraph {
-    width: 75%;
     text-align: center;
+    width: 75%;
   }
 
   &__text-input {
-    height: to-rem(32);
-    width: 40%;
-    text-align: center;
     font-weight: 700;
+    height: to-rem(32);
+    text-align: center;
+    width: 40%;
   }
 
   &__button {
-    @include button-main;
-
-    &::after {
-      background-color: $green25;
-    }
+    @include button-main($green25);
   }
 }

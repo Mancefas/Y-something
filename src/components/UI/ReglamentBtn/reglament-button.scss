@@ -1,10 +1,6 @@
 @import 'scss/utilities/mixins/';
-@import 'scss/variables.scss';
+@import 'scss/variables';
 
 .reglament-button {
-  @include button-main;
-
-  &::after {
-    background-color: $green25;
-  }
+  @include button-main($green25);
 }

@@ -6,7 +6,7 @@ import Contract from 'components/Pages/Contract';
 import SideNavigation from 'components/SideNavigation';
 import { useDataContext } from 'context/DataContext';
 
-import './App.scss';
+import './app.scss';
 import HowToUseIt from 'components/Pages/HowToUseIt';
 
 const App: React.FC = () => {
@@ -15,7 +15,7 @@ const App: React.FC = () => {
     <>
       <div style={{ display: 'flex' }}>
         <SideNavigation />
-        <div className="App">
+        <div className="app">
           {isShowingPage === 'reglaments' ? (
             <Reglaments />
           ) : isShowingPage === 'numbers' ? (

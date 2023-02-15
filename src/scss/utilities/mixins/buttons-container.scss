@@ -1,10 +1,10 @@
 @mixin buttons-container {
-  width: 100%;
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
+  width: 100%;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  gap: 1rem;
 }
