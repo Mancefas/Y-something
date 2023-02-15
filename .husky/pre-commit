@@ -3,3 +3,4 @@
 
 npm run prettier:fix
 npm run eslint:check
+npm run stylelint:lint

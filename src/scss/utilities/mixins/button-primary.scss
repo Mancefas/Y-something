@@ -1,17 +1,17 @@
 @import 'scss/utilities/functions';
-@import 'scss/variables.scss';
+@import 'scss/variables';
 
 @mixin button-primary {
-  min-width: to-rem(115);
-  width: fit-content;
-  height: to-rem(42);
-  text-align: center;
-  padding: to-rem(9) to-rem(24);
   background-color: $green75;
   border: none;
   border-radius: 4px;
   color: $white;
   font-weight: 600;
+  height: to-rem(42);
+  min-width: to-rem(115);
+  padding: to-rem(9) to-rem(24);
+  text-align: center;
+  width: fit-content;
 
   &:hover {
     background-color: $green100;

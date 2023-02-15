@@ -1,6 +1,6 @@
 @import 'scss/utilities/mixins';
 @import 'scss/utilities/functions';
-@import 'scss/variables.scss';
+@import 'scss/variables';
 
 .confirm-contract {
   &__error {
@@ -14,8 +14,10 @@
     & > :first-child {
       border: 3px solid $green75;
     }
+
     & > :last-child {
       border: 3px solid $red75;
+
       &:hover {
         background-color: $red25;
       }

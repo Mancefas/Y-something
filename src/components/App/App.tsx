@@ -1,21 +1,21 @@
 import React from 'react';
 
-import NumberPlates from 'components/Pages/NumberPlates';
-import Reglaments from 'components/Pages/Reglaments';
-import Contract from 'components/Pages/Contract';
 import SideNavigation from 'components/SideNavigation';
+import Reglaments from 'components/Pages/Reglaments';
+import NumberPlates from 'components/Pages/NumberPlates';
+import HowToUseIt from 'components/Pages/HowToUseIt';
+import Contract from 'components/Pages/Contract';
 import { useDataContext } from 'context/DataContext';
 
-import './App.scss';
-import HowToUseIt from 'components/Pages/HowToUseIt';
+import './app.scss';
 
 const App: React.FC = () => {
   const { isShowingPage } = useDataContext();
   return (
     <>
-      <div style={{ display: 'flex' }}>
+      <div className="app" style={{ display: 'flex' }}>
         <SideNavigation />
-        <div className="App">
+        <div className="app__container-inner">
           {isShowingPage === 'reglaments' ? (
             <Reglaments />
           ) : isShowingPage === 'numbers' ? (

@@ -1,25 +1,25 @@
 @import 'scss/utilities/functions/';
-@import 'scss/variables.scss';
+@import 'scss/variables';
 
 .side-navigation {
   $_this: &;
 
-  width: to-rem(50);
-  height: 100vh;
   background-color: $gray100;
-  position: fixed;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   justify-content: flex-end;
+  position: fixed;
   transition: width 200ms ease;
+  width: to-rem(50);
 
   @media screen and (max-width: 768px) {
     bottom: 0;
-    width: 100vw;
-    height: to-rem(60);
     flex-direction: row;
-    z-index: 1;
+    height: to-rem(60);
     justify-content: center;
+    width: 100vw;
+    z-index: 1;
   }
 
   &:hover {
@@ -30,8 +30,8 @@
     }
 
     #{$_this}__button-text {
-      display: block;
       color: $white;
+      display: block;
       padding-left: to-rem(16);
 
       @media screen and (max-width: 768px) {
@@ -43,10 +43,10 @@
   &__list {
     display: flex;
     flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     height: 70%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
     @media screen and (max-width: 768px) {
       flex-direction: row;
@@ -74,15 +74,15 @@
   }
 
   &__button {
-    display: flex;
     align-items: center;
     background: none;
     border: none;
     cursor: pointer;
+    display: flex;
 
     &-icon {
-      min-width: to-rem(30);
       color: $gray50;
+      min-width: to-rem(30);
     }
 
     &-text {

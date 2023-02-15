@@ -1,12 +1,8 @@
 @import 'scss/utilities/mixins/';
-@import 'scss/variables.scss';
+@import 'scss/variables';
 
 .number-plate {
   &__button {
-    @include button-main;
-
-    &:after {
-      background-color: $gray15;
-    }
+    @include button-main($gray15);
   }
 }
