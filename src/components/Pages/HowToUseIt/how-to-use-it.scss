@@ -1,46 +1,23 @@
-@import '../../../scss/utilities/mixins';
-@import '../../../scss/utilities/functions';
-@import '../../../scss/variables.scss';
-@import '../../App/App.scss';
+@import 'scss/utilities/mixins/';
+@import 'scss/utilities/functions';
+@import 'scss/variables';
 
 .use-instruction {
-  &__modal-outter {
-    @include flex-box(row, center, center);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  &__modal-inner {
-    @include flex-box(column, center, center);
-    min-height: 60vh;
-    min-width: 45vw;
-    height: fit-content;
-    width: fit-content;
-    padding: to-rem(32);
-    border-radius: 7px;
-    background-color: $white;
-  }
-
-  &__close-container {
-    @include flex-box($justify-content: flex-end);
-    width: 100%;
-  }
-
-  &__close-button {
-    border: none;
-    text-decoration: none;
-    background: none;
-    font-size: to-rem(20);
-    cursor: pointer;
-  }
+  @include flex-box(column, center, center);
 
   &__header {
     margin-bottom: to-rem(48);
+  }
+
+  &__button-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // getting first arrow
+  & > :nth-child(3) {
+    margin: to-rem(16) 0 0 0;
   }
 
   &__arrow {
@@ -48,18 +25,22 @@
   }
 
   &__paragraph {
-    width: 75%;
     text-align: center;
+    width: 75%;
   }
 
   &__text-input {
-    height: to-rem(32);
-    width: 60%;
-    text-align: center;
     font-weight: 700;
+    height: to-rem(32);
+    text-align: center;
+    width: 40%;
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
   }
 
   &__button {
-    @extend .button-main;
+    @include button-main($green25);
   }
 }

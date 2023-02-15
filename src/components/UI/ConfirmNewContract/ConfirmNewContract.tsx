@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import { DateForToday } from '../../../helpers/Helpers';
-import { useDataContext } from '../../../context/DataContext';
+import { DateForToday } from 'helpers/Helpers';
+import { useDataContext } from 'context/DataContext';
+
 import './confirm-new-contract.scss';
 
 interface ChildPropsType {

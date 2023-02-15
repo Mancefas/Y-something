@@ -1,11 +1,40 @@
-@import '../../App/App.scss';
-@import '../../../scss/utilities/mixins';
+@import 'scss/utilities/mixins';
+@import 'scss/utilities/functions';
+@import 'scss/variables';
 
 .search {
   &__container {
     @include flex-box($align-items: center);
   }
+
   &__input {
-    @extend .seach-input;
+    border: 2px solid $gray15;
+    border-radius: 4px;
+    font-size: to-rem(16);
+    height: to-rem(38);
+    margin: to-rem(16) 0;
+    padding: 0 to-rem(5);
+    width: to-rem(100);
+
+    &::placeholder {
+      color: $gray15;
+    }
+
+    &:hover {
+      border-color: $gray25;
+
+      &::placeholder {
+        color: $gray25;
+      }
+    }
+
+    &:focus {
+      border-color: $green75;
+      outline: none;
+
+      &::placeholder {
+        color: $green75;
+      }
+    }
   }
 }

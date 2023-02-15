@@ -1,5 +1,5 @@
 import { useState, createContext, useContext, type ReactNode } from 'react';
-import { data } from '../store/data';
+import { data } from 'store/data';
 
 interface DataContextTypes {
   dataToShow: Array<{ name: string; text: string; mostUsed?: boolean }>;
@@ -9,8 +9,8 @@ interface DataContextTypes {
   initialData: Array<{ name: string; text: string; mostUsed?: boolean }>;
   searchInput: string;
   setSearchInput: (item: string) => void;
-  whatBtnsToShow: string;
-  setWhatBtnsToShow: (item: string) => void;
+  isShowingPage: string;
+  setIsShowingPage: (item: string) => void;
   showClipboard: boolean;
   setShowClipboard: (item: boolean) => void;
   lastContract: number;
@@ -23,8 +23,8 @@ const DataContext = createContext<DataContextTypes>({
   initialData: [],
   searchInput: '',
   setSearchInput: () => {},
-  whatBtnsToShow: '',
-  setWhatBtnsToShow: () => {},
+  isShowingPage: '',
+  setIsShowingPage: () => {},
   showClipboard: false,
   setShowClipboard: () => {},
   lastContract: 0,
@@ -44,7 +44,7 @@ export function DataContextProvider({
 }: DataContextProviderProps): React.ReactElement {
   const [dataToShow, setDataToShow] = useState(data);
   const [searchInput, setSearchInput] = useState('');
-  const [whatBtnsToShow, setWhatBtnsToShow] = useState('regl');
+  const [isShowingPage, setIsShowingPage] = useState('reglaments');
   const [showClipboard, setShowClipboard] = useState(false);
   const [lastContract, setLastContract] = useState(0);
 
@@ -58,8 +58,8 @@ export function DataContextProvider({
         initialData,
         searchInput,
         setSearchInput,
-        whatBtnsToShow,
-        setWhatBtnsToShow,
+        isShowingPage,
+        setIsShowingPage,
         showClipboard,
         setShowClipboard,
         lastContract,

@@ -1,7 +1,0 @@
-@import '../../App/App.scss';
-@import '../../../scss/utilities/functions';
-
-.filter-button {
-  @extend .button-filter;
-  min-width: to-rem(115);
-}

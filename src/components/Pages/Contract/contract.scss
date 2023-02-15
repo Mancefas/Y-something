@@ -1,17 +1,17 @@
-@import '../../App/App.scss';
-@import '../../../scss/utilities/mixins';
-@import '../../../scss/utilities/functions';
-@import '../../../scss/variables.scss';
+@import 'scss/utilities/mixins';
+@import 'scss/utilities/functions';
+@import 'scss/variables';
 
 .contract {
   &__container {
     @include flex-box(column, center, center);
+
     height: 70vh;
     text-align: center;
   }
 
   &__error-text {
-    color: $error;
+    color: $red75;
   }
 
   &__text-container {
@@ -19,10 +19,10 @@
   }
 
   &__name {
-    color: $blue;
+    color: $blue100;
   }
 
   &__button {
-    @extend .button-contract;
+    @include button-primary;
   }
 }

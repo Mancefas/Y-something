@@ -1,27 +1,33 @@
 import React from 'react';
 
-import Header from '../Header';
-import NumberPlates from '../Pages/NumberPlates';
-import Reglaments from '../Pages/Reglaments';
-import Contract from '../Pages/Contract';
+import SideNavigation from 'components/SideNavigation';
+import Reglaments from 'components/Pages/Reglaments';
+import NumberPlates from 'components/Pages/NumberPlates';
+import HowToUseIt from 'components/Pages/HowToUseIt';
+import Contract from 'components/Pages/Contract';
+import { useDataContext } from 'context/DataContext';
 
-import { useDataContext } from '../../context/DataContext';
-
-import './App.scss';
+import './app.scss';
 
 const App: React.FC = () => {
-  const { whatBtnsToShow } = useDataContext();
+  const { isShowingPage } = useDataContext();
   return (
-    <div className="App">
-      <Header />
-      {whatBtnsToShow === 'regl' ? (
-        <Reglaments />
-      ) : whatBtnsToShow === 'num' ? (
-        <NumberPlates />
-      ) : (
-        <Contract />
-      )}
-    </div>
+    <>
+      <div className="app" style={{ display: 'flex' }}>
+        <SideNavigation />
+        <div className="app__container-inner">
+          {isShowingPage === 'reglaments' ? (
+            <Reglaments />
+          ) : isShowingPage === 'numbers' ? (
+            <NumberPlates />
+          ) : isShowingPage === 'howToUseIt' ? (
+            <HowToUseIt />
+          ) : (
+            <Contract />
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import App from '../../App/App';
 import { SearchBtn } from './SearchInput';
 
-import { DataContextProvider } from '../../../context/DataContext';
+import { DataContextProvider } from '../../../Context/DataContext';
 
 const mockFn = jest.fn();
 

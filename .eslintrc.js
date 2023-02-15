@@ -17,11 +17,19 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    endOfLine: 'off',
     'no-unused-vars': 0,
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     'react/react-in-jsx-scope': ['off'],
     'arrow-body-style': ['error', 'never'],
     'arrow-body-style': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
   },
 };

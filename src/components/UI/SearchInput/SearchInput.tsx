@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
-import { useDataContext } from '../../../context/DataContext';
+import { useDataContext } from 'context/DataContext';
+
 import './search-input.scss';
 
 export const SearchInput: React.FC = () => {
@@ -8,15 +9,13 @@ export const SearchInput: React.FC = () => {
     useDataContext();
 
   useEffect(() => {
-    if (
-      searchInput !== '' &&
-      searchInput[0] === 'Y' &&
-      searchInput[0] !== undefined
-    ) {
+    if (searchInput[0] === 'Y' && searchInput[0] !== undefined) {
       const findDataWithInput = initialData.filter((item) =>
         item.name.includes(searchInput.toUpperCase())
       );
       setDataToShow(findDataWithInput);
+    } else if (searchInput === '') {
+      setDataToShow(initialData.filter((e) => e.mostUsed === true));
     }
     // eslint-disable-next-line
   }, [searchInput]);
@@ -24,10 +23,11 @@ export const SearchInput: React.FC = () => {
   return (
     <div className="search__container">
       <input
+        maxLength={4}
         name="search"
         className="search__input"
-        placeholder="🔍Ieškoti"
-        type="text"
+        placeholder="🔎Ieškoti"
+        type="search"
         value={searchInput.toUpperCase()}
         onChange={(e) => {
           setSearchInput(e.target.value.toUpperCase());

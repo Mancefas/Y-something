@@ -1,0 +1,43 @@
+@import 'scss/utilities/functions';
+@import 'scss/variables';
+
+@mixin button-main($background-color) {
+  background-color: $black-no-opacity;
+  border: 1px solid $gray100;
+  color: $text-color;
+  cursor: pointer;
+  font-size: to-rem(16);
+  font-weight: 700;
+  letter-spacing: to-rem(1);
+  outline: 0;
+  padding: to-rem(13) to-rem(50) to-rem(13);
+  position: relative;
+  touch-action: manipulation;
+  user-select: none;
+
+  &::after {
+    background-color: $background-color;
+    content: '';
+    height: 100%;
+    left: to-rem(7);
+    position: absolute;
+    top: to-rem(7);
+    transition: 0.2s;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    left: 0;
+    top: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: to-rem(13) to-rem(20) to-rem(13);
+
+    &:focus::after {
+      left: to-rem(7);
+      top: to-rem(7);
+    }
+  }
+}
