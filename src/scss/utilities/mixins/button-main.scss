@@ -10,7 +10,7 @@
   font-weight: 700;
   letter-spacing: to-rem(1);
   outline: 0;
-  padding: to-rem(13) to-rem(20) to-rem(13);
+  padding: to-rem(13) to-rem(50) to-rem(13);
   position: relative;
   touch-action: manipulation;
   user-select: none;
@@ -32,12 +32,12 @@
     top: 0;
   }
 
-  &:focus-visible::after {
-    left: 0;
-    top: 0;
-  }
+  @media screen and (max-width: 768px) {
+    padding: to-rem(13) to-rem(20) to-rem(13);
 
-  @media screen and (min-width: 768px) {
-    padding: to-rem(13) to-rem(50) to-rem(13);
+    &:focus::after {
+      left: to-rem(7);
+      top: to-rem(7);
+    }
   }
 }
