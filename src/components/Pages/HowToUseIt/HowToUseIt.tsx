@@ -10,7 +10,7 @@ export const HowToUseIt: React.FC = () => {
 
   const handleClick = (): void => {
     navigator.clipboard
-      .writeText('Pateikiamas teksas su regl.nr. ar kitu reikalavimu')
+      .writeText('Teksas su regl.nr. ar kitu reikalavimu')
       .then(() => {})
       .catch((err) => {
         console.log(err);
