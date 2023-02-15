@@ -1,41 +1,40 @@
 @import 'scss/utilities/functions';
-@import 'scss/variables.scss';
+@import 'scss/variables';
 
-@mixin button-main {
+@mixin button-main($background-color) {
+  background-color: $black-no-opacity;
+  border: 1px solid $gray100;
   color: $text-color;
+  cursor: pointer;
   font-size: to-rem(16);
   font-weight: 700;
   letter-spacing: to-rem(1);
-  padding: to-rem(13) to-rem(20) to-rem(13);
   outline: 0;
-  border: 1px solid $gray100;
-  cursor: pointer;
+  padding: to-rem(13) to-rem(20) to-rem(13);
   position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
+  user-select: none;
 
-  &:after {
+  &::after {
+    background-color: $background-color;
     content: '';
-    // background-color: $green25;
+    height: 100%;
+    left: to-rem(7);
+    position: absolute;
+    top: to-rem(7);
+    transition: 0.2s;
     width: 100%;
     z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: to-rem(7);
-    left: to-rem(7);
-    transition: 0.2s;
   }
 
-  &:hover:after {
-    top: 0px;
-    left: 0px;
+  &:hover::after {
+    left: 0;
+    top: 0;
   }
 
   &:focus-visible::after {
-    top: 0px;
-    left: 0px;
+    left: 0;
+    top: 0;
   }
 
   @media screen and (min-width: 768px) {

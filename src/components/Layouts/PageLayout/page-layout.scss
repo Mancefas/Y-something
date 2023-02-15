@@ -1,9 +1,9 @@
 @import 'scss/utilities/functions';
 
 .page-layout {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
-  width: 70%;
   padding-bottom: to-rem(10);
+  width: 70%;
 }
