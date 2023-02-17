@@ -9,6 +9,6 @@ const mainButton: ComponentMeta<typeof ReglamentBtn> = {
 
 export default mainButton;
 
-export const ReglamentsButton: ComponentStory<typeof ReglamentBtn> = () => (
+export const ReglamentButton: ComponentStory<typeof ReglamentBtn> = () => (
   <ReglamentBtn reglamentName="Y000" />
 );

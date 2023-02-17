@@ -9,6 +9,6 @@ const numberPlate: ComponentMeta<typeof NumberPlateBtn> = {
 
 export default numberPlate;
 
-export const numberPlateButton: ComponentStory<typeof NumberPlateBtn> = () => (
+export const NumberPlateButton: ComponentStory<typeof NumberPlateBtn> = () => (
   <NumberPlateBtn shortNr="ABC:300" />
 );
