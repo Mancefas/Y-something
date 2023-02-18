@@ -55,10 +55,10 @@ export const Contract: React.FC = (): JSX.Element => {
     <div className="contract__container">
       {isLoading && <h4>kraunama...⏳</h4>}
       {error !== '' && (
-        <h4 className="contract__error-text">
-          Klaida gaunant duomenis : {error}
-        </h4>
+        <h4 className="contract__error-text">There is an error : {error}</h4>
       )}
+
+      <h4>Your API to show data can be connected here later.</h4>
 
       {!isLoading && error === '' && lastContract !== 0 && (
         <div className="contract__text-container">

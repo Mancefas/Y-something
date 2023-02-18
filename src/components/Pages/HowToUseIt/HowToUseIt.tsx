@@ -10,7 +10,7 @@ export const HowToUseIt: React.FC = () => {
 
   const handleClick = (): void => {
     navigator.clipboard
-      .writeText('Teksas su regl.nr. ar kitu reikalavimu')
+      .writeText('Text with regl.nr. or number plate')
       .then(() => {})
       .catch((err) => {
         console.log(err);
@@ -21,9 +21,9 @@ export const HowToUseIt: React.FC = () => {
   return (
     <>
       <div className="use-instruction">
-        <h1 className="use-instruction__header">Naudojimosi instrukcija</h1>
+        <h1 className="use-instruction__header">How to use it </h1>
         <h3 style={{ textAlign: 'center' }}>
-          Randam reikiamą numerį ir paspaudžiam ant jo
+          Find a button with needed reglament or number and press on it
         </h3>
 
         <h3 className="use-instruction__arrow">⬇️</h3>
@@ -33,12 +33,11 @@ export const HowToUseIt: React.FC = () => {
             Y901
           </button>
         </div>
-
         <h3 className="use-instruction__arrow">⬇️</h3>
         <h3 className="use-instruction__paragraph">
-          Tada pasirenkam kur reikia pateikti tekstą ir ten paspaudus antrą
-          pelės mygtuką ir paspaudžiam &quot;paste&quot;/&quot;įklijuoti&quot;
-          arba spaudžiam &quot;CTRL&quot; + &quot;V&quot;
+          Select where you need to paste your text and then click the second
+          button on the mouse and &quot;paste&quot; or &quot;CTRL&quot; +
+          &quot;V&quot;
         </h3>
 
         <h3 className="use-instruction__arrow">⬇️</h3>

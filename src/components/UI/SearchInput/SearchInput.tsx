@@ -36,7 +36,7 @@ export const SearchInput: React.FC = () => {
       ></input>
       {searchInput[0] !== 'Y' && searchInput[0] !== undefined ? (
         <h4 data-testid="errMsg" style={{ color: 'red' }}>
-          Turi prasidėti su Y
+          It should start with Y
         </h4>
       ) : (
         ''

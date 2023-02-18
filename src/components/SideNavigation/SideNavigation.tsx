@@ -21,7 +21,7 @@ export const SideNavigation: React.FC = () => {
               setIsShowingPage('reglaments');
             }}
             Icon={<Paper />}
-            text="Reglamentai"
+            text="Reglaments"
           />
         </li>
 
@@ -31,7 +31,7 @@ export const SideNavigation: React.FC = () => {
               setIsShowingPage('numbers');
             }}
             Icon={<TruckIcon />}
-            text="Numeriai"
+            text="Numbers"
           />
         </li>
 
@@ -41,7 +41,7 @@ export const SideNavigation: React.FC = () => {
               setIsShowingPage('none');
             }}
             Icon={<AddIcon />}
-            text="Sutartys"
+            text="API"
           />
         </li>
 
@@ -51,7 +51,7 @@ export const SideNavigation: React.FC = () => {
               setIsShowingPage('howToUseIt');
             }}
             Icon={<Question />}
-            text="Naudojimas"
+            text="Instruction"
           />
         </li>
       </ul>
