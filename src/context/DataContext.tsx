@@ -7,8 +7,6 @@ interface DataContextTypes {
     item: Array<{ name: string; text: string; mostUsed?: boolean }>
   ) => void;
   initialData: Array<{ name: string; text: string; mostUsed?: boolean }>;
-  searchInput: string;
-  setSearchInput: (item: string) => void;
   isShowingPage: string;
   setIsShowingPage: (item: string) => void;
   showClipboard: boolean;
@@ -21,8 +19,6 @@ const DataContext = createContext<DataContextTypes>({
   dataToShow: [],
   setDataToShow: () => {},
   initialData: [],
-  searchInput: '',
-  setSearchInput: () => {},
   isShowingPage: '',
   setIsShowingPage: () => {},
   showClipboard: false,
@@ -42,8 +38,9 @@ interface DataContextProviderProps {
 export function DataContextProvider({
   children,
 }: DataContextProviderProps): React.ReactElement {
-  const [dataToShow, setDataToShow] = useState(data);
-  const [searchInput, setSearchInput] = useState('');
+  const [dataToShow, setDataToShow] = useState(
+    data.filter((e) => e.mostUsed === true)
+  );
   const [isShowingPage, setIsShowingPage] = useState('reglaments');
   const [showClipboard, setShowClipboard] = useState(false);
   const [lastContract, setLastContract] = useState(0);
@@ -56,8 +53,6 @@ export function DataContextProvider({
         dataToShow,
         setDataToShow,
         initialData,
-        searchInput,
-        setSearchInput,
         isShowingPage,
         setIsShowingPage,
         showClipboard,
