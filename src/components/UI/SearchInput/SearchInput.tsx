@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useDataContext } from 'context/DataContext';
 
 import './search-input.scss';
 
 export const SearchInput: React.FC = () => {
-  const { setDataToShow, initialData, searchInput, setSearchInput } =
-    useDataContext();
+  const { setDataToShow, initialData } = useDataContext();
+
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
     if (searchInput[0] === 'Y' && searchInput[0] !== undefined) {

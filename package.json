@@ -26,12 +26,24 @@
     "eslint:check": "eslint \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "eslint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "stylelint:lint": "stylelint \"src/**/*.{css,scss}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -47,7 +59,18 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/node-logger": "^6.5.16",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard-with-typescript": "^33.0.0",
@@ -56,12 +79,15 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-storybook": "^0.6.10",
     "husky": "^8.0.0",
     "prettier": "^2.8.3",
+    "prop-types": "^15.8.1",
     "stylelint": "^15.1.0",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-order": "^6.0.2",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0"
   }
 }
