@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import ConfirmNewContract from 'components/UI/ConfirmNewContract';
+import ConfirmNewContract from 'components/Pages/ConfirmNewContract';
 
 import { useDataContext } from 'context/DataContext';
 
 import './contract.scss';
-
-console.log(process.env.REACT_APP_SERVER_URL);
 
 export const Contract: React.FC = (): JSX.Element => {
   const { lastContract, setLastContract } = useDataContext();
