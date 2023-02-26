@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { sameText } from 'store/data';
-import { useDataContext } from 'context/DataContext';
+import { sameText, data } from 'store/data';
+import useCopyToClipboard from 'hooks/useCopyToClipboard';
 
 import './reglament-button.scss';
 
@@ -10,35 +10,22 @@ interface PropTypes {
 }
 
 export const ReglamentBtn = ({ reglamentName }: PropTypes): JSX.Element => {
-  const { dataToShow, setShowClipboard } = useDataContext();
+  const { copyToClipboard } = useCopyToClipboard();
 
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
     const clickedId = (e.target as HTMLElement).id;
-    const clickedItem = dataToShow.filter(
-      (item) => item.name === `${clickedId}`
-    );
+    const clickedItem = data.filter((item) => item.name === `${clickedId}`);
     const textFromClickedId = clickedItem[0].text;
-    if (textFromClickedId.length <= 9) {
-      navigator.clipboard
-        .writeText(`${sameText}${textFromClickedId}`)
-        .then(() => {
-          setShowClipboard(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      navigator.clipboard
-        .writeText(`${textFromClickedId}`)
-        .then(() => {
-          setShowClipboard(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+
+    const textToClipboard =
+      textFromClickedId.length <= 9
+        ? sameText + textFromClickedId
+        : textFromClickedId;
+
+    // using void here because promise error is handled in useCopyToClipboard
+    void copyToClipboard(textToClipboard);
   };
 
   return (
