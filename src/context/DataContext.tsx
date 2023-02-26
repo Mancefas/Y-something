@@ -13,6 +13,8 @@ interface DataContextTypes {
   setShowClipboard: (item: boolean) => void;
   lastContract: number;
   setLastContract: (item: number) => void;
+  clipboardError: string;
+  setClipboardError: (item: string) => void;
 }
 
 const DataContext = createContext<DataContextTypes>({
@@ -25,6 +27,8 @@ const DataContext = createContext<DataContextTypes>({
   setShowClipboard: () => {},
   lastContract: 0,
   setLastContract: () => {},
+  clipboardError: '',
+  setClipboardError: () => {},
 });
 
 export const useDataContext = (): DataContextTypes => {
@@ -44,6 +48,7 @@ export function DataContextProvider({
   const [isShowingPage, setIsShowingPage] = useState('reglaments');
   const [showClipboard, setShowClipboard] = useState(false);
   const [lastContract, setLastContract] = useState(0);
+  const [clipboardError, setClipboardError] = useState('');
 
   const initialData = data;
 
@@ -59,6 +64,8 @@ export function DataContextProvider({
         setShowClipboard,
         lastContract,
         setLastContract,
+        clipboardError,
+        setClipboardError,
       }}
     >
       {children}

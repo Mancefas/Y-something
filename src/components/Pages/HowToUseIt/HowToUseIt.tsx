@@ -1,21 +1,16 @@
 import React from 'react';
 
 import Clipboard from 'components/UI/ClipBoard';
-import { useDataContext } from 'context/DataContext';
+import useCopyToClipboard from 'hooks/useCopyToClipboard';
 
 import './how-to-use-it.scss';
 
 export const HowToUseIt: React.FC = () => {
-  const { setShowClipboard } = useDataContext();
+  const { copyToClipboard } = useCopyToClipboard();
 
   const handleClick = (): void => {
-    navigator.clipboard
-      .writeText('Teksas su regl.nr. ar kitu reikalavimu')
-      .then(() => {})
-      .catch((err) => {
-        console.log(err);
-      });
-    setShowClipboard(true);
+    // using void here because promise error is handled in useCopyToClipboard
+    void copyToClipboard('Teksas su regl.nr. ar kitu reikalavimu');
   };
 
   return (

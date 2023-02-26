@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useDataContext } from 'context/DataContext';
 import { nrPlates } from 'store/data';
+import useCopyToClipboard from 'hooks/useCopyToClipboard';
 
 import './number-plate-button.scss';
 
@@ -10,7 +10,7 @@ interface PropTypes {
 }
 
 export const NumberPlateBtn: React.FC<PropTypes> = ({ shortNr }) => {
-  const { setShowClipboard } = useDataContext();
+  const { copyToClipboard } = useCopyToClipboard();
 
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -21,14 +21,8 @@ export const NumberPlateBtn: React.FC<PropTypes> = ({ shortNr }) => {
     );
     const textFromClickedId = clickedItem[0].fullNr;
 
-    navigator.clipboard
-      .writeText(`${textFromClickedId}`)
-      .then(() => {
-        setShowClipboard(true);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // using void here because promise error is handled in useCopyToClipboard
+    void copyToClipboard(textFromClickedId);
   };
 
   return (

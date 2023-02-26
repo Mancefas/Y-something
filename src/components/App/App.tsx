@@ -8,14 +8,17 @@ import Contract from 'components/Pages/Contract';
 import { useDataContext } from 'context/DataContext';
 
 import './app.scss';
+import ErrorMessage from 'components/ErrorMessage';
 
 const App: React.FC = () => {
-  const { isShowingPage } = useDataContext();
+  const { isShowingPage, clipboardError } = useDataContext();
   return (
     <>
       <div className="app" style={{ display: 'flex' }}>
         <SideNavigation />
         <div className="app__container-inner">
+          {clipboardError !== '' && <ErrorMessage errorText={clipboardError} />}
+
           {isShowingPage === 'reglaments' ? (
             <Reglaments />
           ) : isShowingPage === 'numbers' ? (
