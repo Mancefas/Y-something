@@ -13,24 +13,22 @@ import ErrorMessage from 'components/ErrorMessage';
 const App: React.FC = () => {
   const { isShowingPage, clipboardError } = useDataContext();
   return (
-    <>
-      <div className="app" style={{ display: 'flex' }}>
-        <SideNavigation />
-        <div className="app__container-inner">
-          {clipboardError !== '' && <ErrorMessage errorText={clipboardError} />}
+    <main className="app">
+      <SideNavigation />
+      <section className="app__container-inner">
+        {clipboardError !== '' && <ErrorMessage errorText={clipboardError} />}
 
-          {isShowingPage === 'reglaments' ? (
-            <Reglaments />
-          ) : isShowingPage === 'numbers' ? (
-            <NumberPlates />
-          ) : isShowingPage === 'howToUseIt' ? (
-            <HowToUseIt />
-          ) : (
-            <Contract />
-          )}
-        </div>
-      </div>
-    </>
+        {isShowingPage === 'reglaments' ? (
+          <Reglaments />
+        ) : isShowingPage === 'numbers' ? (
+          <NumberPlates />
+        ) : isShowingPage === 'howToUseIt' ? (
+          <HowToUseIt />
+        ) : (
+          <Contract />
+        )}
+      </section>
+    </main>
   );
 };
 
