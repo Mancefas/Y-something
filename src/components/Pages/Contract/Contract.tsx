@@ -6,7 +6,7 @@ import { useDataContext } from 'context/DataContext';
 
 import './contract.scss';
 
-export const Contract: React.FC = (): JSX.Element => {
+export const Contract: React.FC = () => {
   const { lastContract, setLastContract } = useDataContext();
 
   const [lastContractDate, setLastContractDate] = useState<string>('');
