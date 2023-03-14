@@ -1,5 +1,5 @@
-@import 'scss/variables';
-@import 'scss/utilities/functions/index';
+@use 'scss/utilities/functions';
+@use 'scss/utilities/mixins';
 
 * {
   margin: 0;
@@ -7,21 +7,21 @@
 }
 
 .app {
-  display: flex;
-
   &__container-inner {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    @include mixins.flex-box($align-items: center);
+
     gap: to-rem(16);
     height: fit-content;
     justify-content: center;
-    margin-left: to-rem(80);
     min-height: 100vh;
     width: 100%;
 
+    @media screen and (max-width: 1050px) {
+      margin-left: functions.to-rem(80);
+    }
+
     @media screen and (max-width: 768px) {
-      margin-bottom: to-rem(80);
+      margin-bottom: functions.to-rem(80);
       margin-left: 0;
     }
   }

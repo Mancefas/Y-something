@@ -1,30 +1,30 @@
-@import 'scss/utilities/mixins';
-@import 'scss/utilities/functions';
-@import 'scss/variables';
+@use 'scss/utilities/mixins';
+@use 'scss/utilities/functions';
+@use 'scss/variables';
 
 .confirm-contract {
   &__error {
-    color: $red75;
+    color: variables.$red75;
   }
 
   &__buttons-container {
-    margin-top: to-rem(16);
-    @include flex-box($justify-content: space-evenly);
+    margin-top: functions.to-rem(16);
+    @include mixins.flex-box($justify-content: space-evenly);
 
     & > :first-child {
-      border: 3px solid $green75;
+      border: 3px solid variables.$green75;
     }
 
     & > :last-child {
-      border: 3px solid $red75;
+      border: 3px solid variables.$red75;
 
       &:hover {
-        background-color: $red25;
+        background-color: variables.$red25;
       }
     }
   }
 
   &__button {
-    @include button-secondary;
+    @include mixins.button-secondary;
   }
 }

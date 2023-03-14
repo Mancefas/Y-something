@@ -1,8 +1,7 @@
-@import 'scss/utilities/mixins';
-@import 'scss/utilities/functions';
+@use 'scss/utilities/mixins';
 
 .reglaments {
   &__container {
-    @include buttons-container;
+    @include mixins.buttons-container;
   }
 }

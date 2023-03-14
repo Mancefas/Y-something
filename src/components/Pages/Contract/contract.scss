@@ -1,28 +1,28 @@
-@import 'scss/utilities/mixins';
-@import 'scss/utilities/functions';
-@import 'scss/variables';
+@use 'scss/utilities/mixins';
+@use 'scss/utilities/functions';
+@use 'scss/variables';
 
 .contract {
   &__container {
-    @include flex-box(column, center, center);
+    @include mixins.flex-box(column, center, center);
 
     height: 70vh;
     text-align: center;
   }
 
   &__error-text {
-    color: $red75;
+    color: variables.$red75;
   }
 
   &__text-container {
-    margin-bottom: to-rem(48);
+    margin-bottom: functions.to-rem(48);
   }
 
   &__name {
-    color: $blue100;
+    color: variables.$blue100;
   }
 
   &__button {
-    @include button-primary;
+    @include mixins.button-primary;
   }
 }

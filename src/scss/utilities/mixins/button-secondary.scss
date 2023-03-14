@@ -1,18 +1,18 @@
-@import 'scss/utilities/functions';
-@import 'scss/variables';
+@use 'scss/utilities/functions';
+@use 'scss/variables';
 
 @mixin button-secondary {
-  background-color: $white;
-  border: 2px solid $green25;
+  background-color: variables.$white;
+  border: 2px solid variables.$green25;
   border-radius: 4px;
-  color: $green100;
+  color: variables.$green100;
   font-weight: 600;
-  height: to-rem(42);
-  min-width: to-rem(115);
-  padding: to-rem(9) to-rem(24);
+  height: functions.to-rem(42);
+  min-width: functions.to-rem(115);
+  padding: functions.to-rem(9) functions.to-rem(24);
   text-align: center;
 
   &:hover {
-    background-color: $green25;
+    background-color: variables.$green25;
   }
 }

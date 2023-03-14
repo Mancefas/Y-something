@@ -1,12 +1,12 @@
-@import 'scss/utilities/mixins/';
-@import 'scss/utilities/functions';
-@import 'scss/variables';
+@use 'scss/utilities/mixins';
+@use 'scss/utilities/functions';
+@use 'scss/variables';
 
 .use-instruction {
-  @include flex-box(column, center, center);
+  @include mixins.flex-box(column, center, center);
 
   &__header {
-    margin-bottom: to-rem(48);
+    margin-bottom: functions.to-rem(48);
   }
 
   &__button-container {
@@ -17,11 +17,11 @@
 
   // getting first arrow
   & > :nth-child(3) {
-    margin: to-rem(16) 0 0 0;
+    margin: functions.to-rem(16) 0 0 0;
   }
 
   &__arrow {
-    margin: to-rem(16);
+    margin: functions.to-rem(16);
   }
 
   &__paragraph {
@@ -31,7 +31,7 @@
 
   &__text-input {
     font-weight: 700;
-    height: to-rem(32);
+    height: functions.to-rem(32);
     text-align: center;
     width: 40%;
 
@@ -41,6 +41,6 @@
   }
 
   &__button {
-    @include button-main($green25);
+    @include mixins.button-main(variables.$green25);
   }
 }

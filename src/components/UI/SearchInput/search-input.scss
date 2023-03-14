@@ -1,39 +1,39 @@
-@import 'scss/utilities/mixins';
-@import 'scss/utilities/functions';
-@import 'scss/variables';
+@use 'scss/utilities/mixins';
+@use 'scss/utilities/functions';
+@use 'scss/variables';
 
 .search {
   &__container {
-    @include flex-box($align-items: center);
+    @include mixins.flex-box($align-items: center);
   }
 
   &__input {
-    border: 2px solid $gray15;
+    border: 2px solid variables.$gray15;
     border-radius: 4px;
-    font-size: to-rem(16);
-    height: to-rem(38);
-    margin: to-rem(16) 0;
-    padding: 0 to-rem(5);
-    width: to-rem(100);
+    font-size: functions.to-rem(16);
+    height: functions.to-rem(38);
+    margin: functions.to-rem(16) 0;
+    padding: 0 functions.to-rem(5);
+    width: functions.to-rem(100);
 
     &::placeholder {
-      color: $gray15;
+      color: variables.$gray15;
     }
 
     &:hover {
-      border-color: $gray25;
+      border-color: variables.$gray25;
 
       &::placeholder {
-        color: $gray25;
+        color: variables.$gray25;
       }
     }
 
     &:focus {
-      border-color: $green75;
+      border-color: variables.$green75;
       outline: none;
 
       &::placeholder {
-        color: $green75;
+        color: variables.$green75;
       }
     }
   }
